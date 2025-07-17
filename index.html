@@ -6,7 +6,6 @@
     <title>Vinayak Pathak | Product & Strategy Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --bg: #ffffff;
@@ -129,7 +128,6 @@
             40% { transform: scale(1); }
         }
 
-        /* Chatbot Styles */
         .chat-message {
             max-width: 80%;
             word-wrap: break-word;
@@ -156,8 +154,10 @@
             <label class="relative inline-block w-16 h-8">
                 <input type="checkbox" id="theme-toggle" class="opacity-0 w-0 h-0">
                 <span class="absolute cursor-pointer top-0 left-0 right-0 bottom-0 rounded-full transition-all duration-300 flex items-center justify-between px-2" style="background: var(--primary-gradient);">
-                    <i class="fas fa-sun text-white"></i>
-                    <i class="fas fa-moon text-white"></i>
+                    <!-- Sun Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <!-- Moon Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                 </span>
                 <span id="theme-knob" class="absolute content-[''] h-6 w-6 left-1 top-1 bg-white rounded-full transition-all duration-300"></span>
             </label>
@@ -173,8 +173,9 @@
                 </h1>
                 <p class="text-lg md:text-xl mb-8 font-light" style="color: var(--subtext);">Product Strategy • Market Research • Business & Social Impact</p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <button onclick="openPDFModal('vinayak-resume.pdf', 'Vinayak Pathak - Resume')" class="btn-primary text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto">
-                        <i class="fas fa-file-alt mr-2"></i> View My Resume
+                    <button onclick="openPDFModal('vinayak-resume.pdf', 'Vinayak Pathak - Resume')" class="btn-primary text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto inline-flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        View My Resume
                     </button>
                     <a href="#contact" class="bg-gray-200 dark:bg-gray-700 font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto" style="color: var(--primary);">
                         Get In Touch
@@ -183,30 +184,31 @@
             </div>
         </section>
 
-        <!-- All Sections -->
-        <div class="container mx-auto px-6 space-y-16 md:space-y-24">
+        <!-- Wrapper for main content sections -->
+        <div class="space-y-16 md:space-y-24">
+
             <!-- About Section -->
-            <section id="about" class="reveal text-center">
+            <section id="about" class="container mx-auto px-6 py-12 md:py-16 reveal text-center">
                 <h2 class="section-title relative text-3xl md:text-4xl font-bold mb-16" style="color: var(--primary);">About Me</h2>
                 <p class="max-w-3xl mx-auto text-lg" style="color: var(--subtext);">
                     I'm a KIIT CSE student passionate about blending product management, market research, and business strategy to drive social impact. I've interned at ONGC Videsh & Growth Foundation, led projects at Foruppo, and championed social ventures with Enactus.
                 </p>
             </section>
             
-            <div class="border-t" style="border-color: var(--border);"></div>
+            <div class="container mx-auto px-6"><div class="border-t" style="border-color: var(--border);"></div></div>
 
             <!-- Skills Section -->
-            <section id="skills" class="reveal">
+            <section id="skills" class="container mx-auto px-6 py-12 md:py-16 reveal">
                 <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-16" style="color: var(--primary);">Skills & Expertise</h2>
-                <div id="skills-tabs" class="flex flex-wrap justify-center gap-4 mb-8">
-                    <button data-tab="product" class="tab-btn active font-semibold py-3 px-6 rounded-lg transition-all duration-300"><i class="fas fa-project-diagram mr-2"></i>Product & Strategy</button>
-                    <button data-tab="research" class="tab-btn font-semibold py-3 px-6 rounded-lg transition-all duration-300"><i class="fas fa-chart-line mr-2"></i>Research & Analytics</button>
-                    <button data-tab="leadership" class="tab-btn font-semibold py-3 px-6 rounded-lg transition-all duration-300"><i class="fas fa-users mr-2"></i>Leadership & Communication</button>
+                <div id="skills-tabs" class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mb-8">
+                    <button data-tab="product" class="tab-btn active font-semibold py-3 px-6 rounded-lg transition-all duration-300 inline-flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M12 20h.01"></path><path d="M12 4h.01"></path><path d="M4 12h.01"></path><path d="M20 12h.01"></path><path d="M12 12l-8 8"></path><path d="m20 4-8 8"></path><path d="m4 4 16 16"></path></svg>Product & Strategy</button>
+                    <button data-tab="research" class="tab-btn font-semibold py-3 px-6 rounded-lg transition-all duration-300 inline-flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>Research & Analytics</button>
+                    <button data-tab="leadership" class="tab-btn font-semibold py-3 px-6 rounded-lg transition-all duration-300 inline-flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Leadership & Communication</button>
                 </div>
                 <div class="tab-content active" id="product-content">
-                    <div class="grid md:grid-cols-1 gap-8">
+                    <div class="grid md:grid-cols-1 gap-8 max-w-4xl mx-auto">
                         <div class="p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300" style="background-color: var(--card); border: 1px solid var(--border);">
-                            <h3 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-road mr-3 text-2xl" style="color: var(--primary);"></i>Product & Strategy</h3>
+                            <h3 class="text-xl font-bold mb-4 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3" style="color: var(--primary);"><path d="M12 20h.01"></path><path d="M12 4h.01"></path><path d="M4 12h.01"></path><path d="M20 12h.01"></path><path d="M12 12l-8 8"></path><path d="m20 4-8 8"></path><path d="m4 4 16 16"></path></svg>Product & Strategy</h3>
                             <ul class="list-disc list-inside space-y-2" style="color: var(--subtext);">
                                 <li>Product Roadmapping & Roadmap Prioritization</li>
                                 <li>Go‑to‑Market Strategy & Launch Planning</li>
@@ -217,9 +219,9 @@
                     </div>
                 </div>
                 <div class="tab-content hidden" id="research-content">
-                     <div class="grid md:grid-cols-1 gap-8">
+                     <div class="grid md:grid-cols-1 gap-8 max-w-4xl mx-auto">
                         <div class="p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300" style="background-color: var(--card); border: 1px solid var(--border);">
-                            <h3 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-chart-line mr-3 text-2xl" style="color: var(--primary);"></i>Research & Analytics</h3>
+                            <h3 class="text-xl font-bold mb-4 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3" style="color: var(--primary);"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>Research & Analytics</h3>
                             <ul class="list-disc list-inside space-y-2" style="color: var(--subtext);">
                                 <li>Market Research & Competitive Analysis</li>
                                 <li>Data Analysis (Python, SQL, Excel)</li>
@@ -230,9 +232,9 @@
                     </div>
                 </div>
                 <div class="tab-content hidden" id="leadership-content">
-                    <div class="grid md:grid-cols-1 gap-8">
+                    <div class="grid md:grid-cols-1 gap-8 max-w-4xl mx-auto">
                         <div class="p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300" style="background-color: var(--card); border: 1px solid var(--border);">
-                            <h3 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-users mr-3 text-2xl" style="color: var(--primary);"></i>Leadership & Communication</h3>
+                            <h3 class="text-xl font-bold mb-4 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3" style="color: var(--primary);"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Leadership & Communication</h3>
                             <ul class="list-disc list-inside space-y-2" style="color: var(--subtext);">
                                 <li>Stakeholder Management & Collaboration</li>
                                 <li>Team Leadership & Mentoring</li>
@@ -244,17 +246,17 @@
                 </div>
             </section>
 
-            <div class="border-t" style="border-color: var(--border);"></div>
+            <div class="container mx-auto px-6"><div class="border-t" style="border-color: var(--border);"></div></div>
 
             <!-- Journey Section -->
-            <section id="journey" class="reveal">
+            <section id="journey" class="container mx-auto px-6 py-12 md:py-16 reveal">
                  <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-24" style="color: var(--primary);">Work & Impact Journey</h2>
                  <div class="timeline relative max-w-4xl mx-auto">
                     <!-- Timeline Item -->
                     <div class="mb-8 flex justify-between items-center w-full right-timeline">
                         <div class="order-1 w-5/12 md:block hidden"></div>
                         <div class="z-20 flex items-center order-1 shadow-xl w-12 h-12 rounded-full" style="background: var(--primary-gradient);">
-                            <i class="fas fa-chart-line text-white mx-auto text-xl"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white mx-auto"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>
                         </div>
                         <div class="order-1 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4" style="background-color: var(--card); border: 1px solid var(--border);">
                             <p class="font-semibold" style="color: var(--primary);">Jun 2025 – Present</p>
@@ -266,7 +268,7 @@
                     <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
                         <div class="order-1 w-5/12 md:block hidden"></div>
                         <div class="z-20 flex items-center order-1 shadow-xl w-12 h-12 rounded-full" style="background: var(--primary-gradient);">
-                            <i class="fas fa-users text-white mx-auto text-xl"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white mx-auto"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                         </div>
                         <div class="order-1 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4" style="background-color: var(--card); border: 1px solid var(--border);">
                             <p class="font-semibold" style="color: var(--primary);">Feb 2023 – Present</p>
@@ -282,7 +284,7 @@
                     <div class="mb-8 flex justify-between items-center w-full right-timeline">
                         <div class="order-1 w-5/12 md:block hidden"></div>
                         <div class="z-20 flex items-center order-1 shadow-xl w-12 h-12 rounded-full" style="background: var(--primary-gradient);">
-                            <i class="fas fa-briefcase text-white mx-auto text-xl"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white mx-auto"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16z"></path><path d="M16 10h4"></path><path d="M4 10h4"></path><path d="M10 10h4"></path></svg>
                         </div>
                         <div class="order-1 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4" style="background-color: var(--card); border: 1px solid var(--border);">
                             <p class="font-semibold" style="color: var(--primary);">Mar 2024 – Jul 2024</p>
@@ -298,7 +300,7 @@
                     <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
                         <div class="order-1 w-5/12 md:block hidden"></div>
                         <div class="z-20 flex items-center order-1 shadow-xl w-12 h-12 rounded-full" style="background: var(--primary-gradient);">
-                            <i class="fas fa-industry text-white mx-auto text-xl"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white mx-auto"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         </div>
                         <div class="order-1 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4" style="background-color: var(--card); border: 1px solid var(--border);">
                             <p class="font-semibold" style="color: var(--primary);">May 2024 – Jun 2024</p>
@@ -314,453 +316,4 @@
                      <div class="mb-8 flex justify-between items-center w-full right-timeline">
                         <div class="order-1 w-5/12 md:block hidden"></div>
                         <div class="z-20 flex items-center order-1 shadow-xl w-12 h-12 rounded-full" style="background: var(--primary-gradient);">
-                            <i class="fas fa-hands-helping text-white mx-auto text-xl"></i>
-                        </div>
-                        <div class="order-1 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4" style="background-color: var(--card); border: 1px solid var(--border);">
-                            <p class="font-semibold" style="color: var(--primary);">Jul 2023 – Oct 2023</p>
-                            <h3 class="font-bold text-lg mb-1">Intern, Growth Foundation of India</h3>
-                            <ul class="text-sm list-disc list-inside space-y-1 mt-2" style="color: var(--subtext);">
-                                <li>Researched tribal health & education.</li>
-                                <li>Supported fundraising & outreach.</li>
-                                <li>Managed impact reporting.</li>
-                            </ul>
-                        </div>
-                    </div>
-                 </div>
-            </section>
-            
-            <div class="border-t" style="border-color: var(--border);"></div>
-
-            <!-- Case Studies Section -->
-            <section id="case-studies" class="reveal">
-                <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-16" style="color: var(--primary);">Case Studies</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-heart-pulse text-3xl mb-4" style="color: var(--primary);"></i>
-                        <h3 class="font-bold text-xl mb-2">Smart Health Integration</h3>
-                        <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Problem:</strong> No unified AI‑driven platform for personal health tracking.</p>
-                        <button onclick="openPDFModal('smart-health-integration.pdf', 'Case Study: Smart Health Integration')" class="font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color: var(--primary); border: 1px solid var(--primary);">View Case Study</button>
-                    </div>
-                    <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-brain text-3xl mb-4" style="color: var(--primary);"></i>
-                        <h3 class="font-bold text-xl mb-2">BCN Brainwars</h3>
-                        <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Problem:</strong> Nexus Motors aims to enter India's EV market with Voltaris Z and set up local manufacturing.</p>
-                        <button onclick="openPDFModal('BCN.pdf', 'Case Study: BCN Brainwars')" class="font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color: var(--primary); border: 1px solid var(--primary);">View Case Study</button>
-                    </div>
-                    <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-credit-card text-3xl mb-4" style="color: var(--primary);"></i>
-                        <h3 class="font-bold text-xl mb-2">RuPay Premium Card Strategy</h3>
-                        <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Problem:</strong> RuPay lacked appeal in India's premium segment.</p>
-                        <button onclick="openPDFModal('rupay-premium-strategy.pdf', 'Case Study: RuPay Premium Card Strategy')" class="font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color: var(--primary); border: 1px solid var(--primary);">View Case Study</button>
-                    </div>
-                    <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-utensils text-3xl mb-4" style="color: var(--primary);"></i>
-                        <h3 class="font-bold text-xl mb-2">Zomato Street Food Integration</h3>
-                        <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Problem:</strong> Guwahati street vendors not digitally accessible.</p>
-                        <button onclick="openPDFModal('zomato-street-food.pdf', 'Case Study: Zomato Street Food Integration')" class="font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color: var(--primary); border: 1px solid var(--primary);">View Case Study</button>
-                    </div>
-                    <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-tint text-3xl mb-4" style="color: var(--primary);"></i>
-                        <h3 class="font-bold text-xl mb-2">Blitz Hydration Strategy</h3>
-                        <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Problem:</strong> Need differentiation vs Gatorade & PRIME.</p>
-                        <button onclick="openPDFModal('team-mr-x.pdf', 'Case Study: Blitz Hydration Strategy')" class="font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color: var(--primary); border: 1px solid var(--primary);">View Case Study</button>
-                    </div>
-                </div>
-            </section>
-
-            <div class="border-t" style="border-color: var(--border);"></div>
-            
-            <!-- Research Publications Section -->
-            <section class="publications reveal" id="publications">
-                <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-16" style="color: var(--primary);">Research Publications</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-                    <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-file-medical text-3xl mb-4" style="color: var(--primary);"></i>
-                        <h3 class="font-bold text-xl mb-2">SDOH-Based ZIP Code Health Forecasting</h3>
-                        <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Focus:</strong> Forecasting public health outcomes using XGBoost & Random Forest based on social determinants.</p>
-                        <button class="btn btn-outline will-change font-semibold text-sm py-2 px-4 rounded-md mt-auto" onclick="openPDFModal('sdoh-health-forecasting.pdf', 'Research: SDOH Health Forecasting')" style="color: var(--primary); border: 1px solid var(--primary);">
-                            View Paper
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            <div class="border-t" style="border-color: var(--border);"></div>
-
-            <!-- Courses & Certifications Section -->
-            <section class="certificates reveal" id="certificates">
-                <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-16" style="color: var(--primary);">Courses & Certifications</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-chess text-3xl mb-4" style="color: var(--primary);"></i>
-                        <h3 class="font-bold text-xl mb-2">Strategy & Game Theory</h3>
-                        <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Provider:</strong> IIM Ahmedabad via Coursera</p>
-                        <button class="btn btn-outline will-change font-semibold text-sm py-2 px-4 rounded-md mt-auto" onclick="openPDFModal('Coursera GKGRPO2ZQM0D.pdf', 'Certificate: Strategy & Game Theory')" style="color: var(--primary); border: 1px solid var(--primary);">
-                            View Certificate
-                        </button>
-                    </div>
-                    <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-trophy text-3xl mb-4" style="color: var(--primary);"></i>
-                        <h3 class="font-bold text-xl mb-2">E-Conjecture Finalist</h3>
-                        <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Event:</strong> IIM Indore</p>
-                        <button class="btn btn-outline will-change font-semibold text-sm py-2 px-4 rounded-md mt-auto" onclick="openPDFModal('Vinayak Pathak_E -conjecture.pdf', 'Certificate: E-Conjecture Finalist')" style="color: var(--primary); border: 1px solid var(--primary);">
-                            View Certificate
-                        </button>
-                    </div>
-                    <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-award text-3xl mb-4" style="color: var(--primary);"></i>
-                        <h3 class="font-bold text-xl mb-2">Enactus India Winner</h3>
-                        <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Recognition:</strong> Early Stage Category, 2024</p>
-                        <button class="btn btn-outline will-change font-semibold text-sm py-2 px-4 rounded-md mt-auto" onclick="openPDFModal('Enactus India National Exposition 2024.pdf', 'Certificate: Enactus India Winner')" style="color: var(--primary); border: 1px solid var(--primary);">
-                            View Certificate
-                        </button>
-                    </div>
-                    <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-chart-bar text-3xl mb-4" style="color: var(--primary);"></i>
-                        <h3 class="font-bold text-xl mb-2">Business Analytics</h3>
-                        <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Provider:</strong> Coursera</p>
-                        <button class="btn btn-outline will-change font-semibold text-sm py-2 px-4 rounded-md mt-auto" onclick="openPDFModal('Business Analytics Certificate.pdf', 'Certificate: Business Analytics')" style="color: var(--primary); border: 1px solid var(--primary);">
-                            View Certificate
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            <div class="border-t" style="border-color: var(--border);"></div>
-
-            <!-- AI Chatbot Section -->
-            <section id="ai-chatbot" class="reveal">
-                <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-16" style="color: var(--primary);">💬 Chat with My AI Assistant</h2>
-                <div class="max-w-3xl mx-auto p-4 sm:p-6 rounded-xl shadow-lg" style="background-color: var(--card); border: 1px solid var(--border);">
-                    <div id="chat-log" class="h-80 overflow-y-auto p-4 space-y-4 mb-4 rounded-lg" style="background-color: var(--surface);">
-                        <!-- Chat messages will appear here -->
-                         <div class="flex justify-start">
-                            <div class="ai-message chat-message p-3 rounded-lg">
-                                <p>Hello! I'm Vinayak's AI assistant. Feel free to ask me anything about his skills, experience, or projects. How can I help you?</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="chat-loader" class="hidden justify-start mb-4">
-                        <div class="ai-message chat-message p-3 rounded-lg flex items-center">
-                            <div class="loader-dots flex space-x-1">
-                                <div class="w-2 h-2 rounded-full" style="background-color: var(--primary);"></div>
-                                <div class="w-2 h-2 rounded-full" style="background-color: var(--primary);"></div>
-                                <div class="w-2 h-2 rounded-full" style="background-color: var(--primary);"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <form id="chat-form" class="flex gap-2">
-                        <input type="text" id="chat-input" class="flex-grow p-3 rounded-lg" style="background-color: var(--surface); border: 1px solid var(--border);" placeholder="Ask about a specific project or skill...">
-                        <button type="submit" id="send-btn" class="btn-primary text-white font-semibold py-3 px-5 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </section>
-
-            <div class="border-t" style="border-color: var(--border);"></div>
-
-            <!-- Contact Section -->
-            <section id="contact" class="reveal">
-                <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-16" style="color: var(--primary);">Get In Touch</h2>
-                <div class="max-w-lg mx-auto text-center">
-                    <p class="mb-8" style="color: var(--subtext);">Have a question or want to work together? Feel free to reach out.</p>
-                    <a href="mailto:pathakvinayak31@gmail.com" class="btn-primary text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                        <i class="fas fa-paper-plane mr-2"></i> Send a Message
-                    </a>
-                    <div class="flex justify-center gap-6 mt-8">
-                        <a href="https://linkedin.com/in/vinayakpathak" target="_blank" class="text-2xl hover:opacity-75" style="color: var(--primary);"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/yourusername" target="_blank" class="text-2xl hover:opacity-75" style="color: var(--primary);"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <footer class="text-center py-8 mt-16 md:mt-24" style="color: var(--subtext); background-color: var(--surface);">
-        <p>&copy; 2025 Vinayak Pathak. All Rights Reserved.</p>
-    </footer>
-
-    <!-- PDF Modal -->
-    <div id="pdfModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm">
-        <div class="flex flex-col w-11/12 h-5/6 max-w-4xl rounded-lg shadow-2xl" style="background-color: var(--card);">
-            <div class="flex justify-between items-center p-4 border-b" style="border-color: var(--border);">
-                <h3 id="modalTitle" class="font-bold text-lg">Document</h3>
-                <button onclick="closePDFModal()" class="text-2xl w-8 h-8 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">&times;</button>
-            </div>
-            <div class="flex-grow p-1">
-                <iframe id="pdfFrame" class="w-full h-full" frameborder="0"></iframe>
-            </div>
-        </div>
-    </div>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // --- Theme Toggle ---
-            const themeToggle = document.getElementById('theme-toggle');
-            const themeKnob = document.getElementById('theme-knob');
-            const html = document.documentElement;
-
-            function setTheme(theme) {
-                html.setAttribute('data-theme', theme);
-                localStorage.setItem('theme', theme);
-                if (theme === 'dark') {
-                    themeToggle.checked = true;
-                    themeKnob.style.transform = 'translateX(32px)';
-                } else {
-                    themeToggle.checked = false;
-                    themeKnob.style.transform = 'translateX(0px)';
-                }
-                if (window.particles) {
-                    window.particles.reinit();
-                }
-            }
-
-            themeToggle.addEventListener('change', () => {
-                setTheme(themeToggle.checked ? 'dark' : 'light');
-            });
-
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            setTheme(savedTheme);
-
-            // --- Tabs ---
-            const tabContainer = document.getElementById('skills-tabs');
-            if(tabContainer) {
-                const tabButtons = tabContainer.querySelectorAll('.tab-btn');
-                const tabContents = document.querySelectorAll('.tab-content');
-                
-                const activeTab = tabContainer.querySelector('.tab-btn.active');
-                activeTab.style.background = 'var(--primary-gradient)';
-                activeTab.style.color = 'white';
-
-                tabButtons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        const targetId = button.dataset.tab + '-content';
-                        
-                        tabButtons.forEach(btn => {
-                            btn.classList.remove('active');
-                            btn.style.background = '';
-                            btn.style.color = 'var(--text)';
-                        });
-                        button.classList.add('active');
-                        button.style.background = 'var(--primary-gradient)';
-                        button.style.color = 'white';
-
-                        tabContents.forEach(content => {
-                            content.classList.toggle('hidden', content.id !== targetId);
-                            content.classList.toggle('active', content.id === targetId);
-                        });
-                    });
-                });
-            }
-
-
-            // --- Scroll Animations ---
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-            
-            // --- Header Scroll Effect ---
-            const header = document.getElementById('header');
-            window.addEventListener('scroll', () => {
-                header.classList.toggle('shadow-lg', window.scrollY > 50);
-                header.classList.toggle('bg-white/80', window.scrollY > 50);
-                header.classList.toggle('dark:bg-black/80', window.scrollY > 50);
-            });
-
-            // --- Canvas Particle Animation ---
-            class ParticleAnimation {
-                constructor(canvasId) {
-                    this.canvas = document.getElementById(canvasId);
-                    this.ctx = this.canvas.getContext('2d');
-                    this.particles = [];
-                    this.resizeCanvas();
-                    this.init();
-                    window.addEventListener('resize', () => this.resizeCanvas());
-                }
-
-                resizeCanvas() {
-                    this.canvas.width = window.innerWidth;
-                    this.canvas.height = window.innerHeight;
-                    this.init(); // Re-initialize particles on resize
-                }
-
-                getThemeColors() {
-                    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                    return {
-                        particleColor: isDark ? 'rgba(168, 85, 247, 0.6)' : 'rgba(102, 126, 234, 0.4)',
-                    };
-                }
-
-                init() {
-                    const colors = this.getThemeColors();
-                    this.particles = [];
-                    const numberOfParticles = (this.canvas.width * this.canvas.height) / 9000;
-                    for (let i = 0; i < numberOfParticles; i++) {
-                        let size = (Math.random() * 2) + 1;
-                        let x = (Math.random() * ((this.canvas.width - size * 2) - (size * 2)) + size * 2);
-                        let y = (Math.random() * ((this.canvas.height - size * 2) - (size * 2)) + size * 2);
-                        let directionX = (Math.random() * .4) - .2;
-                        let directionY = (Math.random() * .4) - .2;
-                        let color = colors.particleColor;
-                        this.particles.push({ x, y, directionX, directionY, size, color });
-                    }
-                }
-                
-                reinit() {
-                    this.init();
-                }
-
-                animate() {
-                    requestAnimationFrame(() => this.animate());
-                    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-                    for (let i = 0; i < this.particles.length; i++) {
-                        let particle = this.particles[i];
-                        particle.x += particle.directionX;
-                        particle.y += particle.directionY;
-
-                        if (particle.x + particle.size > this.canvas.width || particle.x - particle.size < 0) {
-                            particle.directionX = -particle.directionX;
-                        }
-                        if (particle.y + particle.size > this.canvas.height || particle.y - particle.size < 0) {
-                            particle.directionY = -particle.directionY;
-                        }
-
-                        this.ctx.beginPath();
-                        this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2, false);
-                        this.ctx.fillStyle = particle.color;
-                        this.ctx.fill();
-                    }
-                }
-            }
-
-            window.particles = new ParticleAnimation('particle-canvas');
-            window.particles.animate();
-
-            // --- Gemini AI Chatbot ---
-            const chatForm = document.getElementById('chat-form');
-            const chatInput = document.getElementById('chat-input');
-            const chatLog = document.getElementById('chat-log');
-            const chatLoader = document.getElementById('chat-loader');
-            
-            const portfolioContext = `You are Vinayak Pathak's helpful AI Assistant. Your goal is to answer questions from recruiters, mentors, and visitors based on the information from Vinayak's portfolio. Be professional, concise, and helpful.
-
-            Here is the information about Vinayak Pathak:
-            - Summary: A KIIT CSE student passionate about blending product management, market research, and business strategy to drive social impact.
-            - Skills:
-              - Product & Strategy: Product Roadmapping, Go-to-Market Strategy, Business Model & Revenue Strategy, Agile Methodologies.
-              - Research & Analytics: Market Research, Competitive Analysis, Data Analysis (Python, SQL, Excel), UX Research, A/B Testing.
-              - Leadership & Communication: Stakeholder Management, Team Leadership, Presentation Design, Critical Thinking.
-            - Experience:
-              - Research & BD Intern at InsightAlpha (Present): Leading content research.
-              - Core Member at Enactus (Present): Led market research and GTM for social ventures.
-              - Product Fellow at Foruppo: Conducted consumer insights, competitive analysis.
-              - Intern at ONGC Videsh Ltd.: Market research, benchmarking, IT strategy.
-              - Intern at Growth Foundation of India: Researched tribal health, supported fundraising.
-            - Case Studies & Publications: Has completed case studies on Smart Health Integration, EV market entry (BCN Brainwars), RuPay's premium card strategy, Zomato's street food integration, and a hydration drink strategy. Published research on health forecasting using ML models (XGBoost & Random Forest).
-            - Certifications: Strategy & Game Theory (IIM Ahmedabad), Business Analytics (Coursera), plus awards from IIM Indore and Enactus India.
-            
-            Start the conversation by introducing yourself. When a user asks a question, use the data above to formulate your answer.`;
-
-            let chatHistory = [{
-                role: "user",
-                parts: [{ text: portfolioContext }]
-            }, {
-                role: "model",
-                parts: [{ text: "Hello! I'm Vinayak's AI assistant. Feel free to ask me anything about his skills, experience, or projects. How can I help you?" }]
-            }];
-
-            chatForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const userMessage = chatInput.value.trim();
-                if (!userMessage) return;
-
-                appendMessage(userMessage, 'user');
-                chatInput.value = '';
-                chatLoader.classList.remove('hidden');
-                chatLoader.classList.add('flex');
-
-                chatHistory.push({ role: "user", parts: [{ text: userMessage }] });
-
-                try {
-                    const payload = { contents: chatHistory };
-                    const apiKey = ""; // Handled by environment
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-                    
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) throw new Error(`API Error: ${response.status}`);
-                    
-                    const result = await response.json();
-                    
-                    let aiMessage = 'Sorry, I encountered an issue. Please try again.';
-                    if (result.candidates && result.candidates.length > 0 && result.candidates[0].content.parts.length > 0) {
-                        aiMessage = result.candidates[0].content.parts[0].text;
-                    }
-                    
-                    chatHistory.push({ role: "model", parts: [{ text: aiMessage }] });
-                    appendMessage(aiMessage, 'ai');
-
-                } catch (error) {
-                    console.error("Chatbot Error:", error);
-                    appendMessage("I'm having trouble connecting right now. Please try again later.", 'ai');
-                } finally {
-                    chatLoader.classList.add('hidden');
-                    chatLoader.classList.remove('flex');
-                }
-            });
-
-            function appendMessage(message, sender) {
-                const messageWrapper = document.createElement('div');
-                messageWrapper.classList.add('flex', sender === 'user' ? 'justify-end' : 'justify-start');
-                
-                const messageBubble = document.createElement('div');
-                messageBubble.classList.add('chat-message', 'p-3', 'rounded-lg', sender === 'user' ? 'user-message' : 'ai-message');
-                messageBubble.textContent = message;
-                
-                messageWrapper.appendChild(messageBubble);
-                chatLog.appendChild(messageWrapper);
-                chatLog.scrollTop = chatLog.scrollHeight;
-            }
-        });
-
-        // --- Modal Logic ---
-        const pdfModal = document.getElementById('pdfModal');
-        const pdfFrame = document.getElementById('pdfFrame');
-        const modalTitle = document.getElementById('modalTitle');
-
-        function openPDFModal(pdfPath, title) {
-            pdfFrame.src = pdfPath;
-            modalTitle.textContent = title;
-            pdfModal.classList.remove('hidden');
-            pdfModal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closePDFModal() {
-            pdfFrame.src = '';
-            pdfModal.classList.add('hidden');
-            pdfModal.classList.remove('flex');
-            document.body.style.overflow = 'auto';
-        }
-        
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !pdfModal.classList.contains('hidden')) {
-                closePDFModal();
-            }
-        });
-    </script>
-</body>
-</html>
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white mx-auto"><path d="M12 5C12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 1
