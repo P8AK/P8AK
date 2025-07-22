@@ -6,7 +6,6 @@
     <title>Vinayak Pathak | Product & Strategy Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --bg: #ffffff;
@@ -85,7 +84,15 @@
 
         @media (max-width: 768px) {
             .timeline::after {
-                left: 31px;
+                left: 23px;
+            }
+             .left-timeline, .right-timeline {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 0;
+            }
+            .left-timeline > div:first-child, .right-timeline > div:first-child {
+                display: none;
             }
         }
 
@@ -148,15 +155,14 @@
 
     <canvas id="particle-canvas"></canvas>
 
-    <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-white/5 dark:bg-black/5 border-b border-white/10 dark:border-black/10">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-4xl font-extrabold"><span class="logo-v">V</span><span style="color: var(--text)">P</span></div>
             <label class="relative inline-block w-16 h-8">
                 <input type="checkbox" id="theme-toggle" class="opacity-0 w-0 h-0">
                 <span class="absolute cursor-pointer top-0 left-0 right-0 bottom-0 rounded-full transition-all duration-300 flex items-center justify-between px-2" style="background: var(--primary-gradient);">
-                    <i class="fas fa-sun text-white"></i>
-                    <i class="fas fa-moon text-white"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                 </span>
                 <span id="theme-knob" class="absolute content-[''] h-6 w-6 left-1 top-1 bg-white rounded-full transition-all duration-300"></span>
             </label>
@@ -164,7 +170,6 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section class="min-h-screen flex items-center justify-center text-center px-4 pt-24 pb-12">
             <div class="max-w-4xl mx-auto">
                 <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4">
@@ -172,8 +177,9 @@
                 </h1>
                 <p class="text-lg md:text-xl mb-8 font-light" style="color: var(--subtext);">Product Strategy • Market Research • Business & Social Impact</p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <button onclick="openPDFModal('vinayak-resume.pdf', 'Vinayak Pathak - Resume')" class="btn-primary text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto">
-                        <i class="fas fa-file-alt mr-2"></i> View My Resume
+                    <button onclick="openPDFModal('vinayak-resume.pdf', 'Vinayak Pathak - Resume')" class="btn-primary text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto inline-flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        View My Resume
                     </button>
                     <a href="#contact" class="bg-gray-200 dark:bg-gray-700 font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto" style="color: var(--primary);">
                         Get In Touch
@@ -182,30 +188,38 @@
             </div>
         </section>
 
-        <!-- All Sections -->
-        <div class="container mx-auto px-6 space-y-16 md:space-y-24">
-            <!-- About Section -->
-            <section id="about" class="reveal text-center">
+        <div class="container mx-auto px-6">
+            <section id="about" class="reveal text-center py-12 md:py-16">
                 <h2 class="section-title relative text-3xl md:text-4xl font-bold mb-16" style="color: var(--primary);">About Me</h2>
-                <p class="max-w-3xl mx-auto text-lg" style="color: var(--subtext);">
-                    I'm a KIIT CSE student passionate about blending product management, market research, and business strategy to drive social impact. I've interned at ONGC Videsh & Growth Foundation, led projects at Foruppo, and championed social ventures with Enactus.
-                </p>
+                <div class="max-w-4xl mx-auto text-left text-lg space-y-4" style="color: var(--subtext);">
+                    <p>
+                        Hello! I'm Vinayak. I'm a strategic thinker and problem-solver, currently studying Computer Science, with a passion for deconstructing complex challenges to build effective solutions.
+                    </p>
+                    <p>
+                        My core interest lies in the space where strategy meets execution. I am driven by a data-first approach, diving deep into market research, competitive analysis, and user insights to build a foundational understanding of any problem before crafting a solution.
+                    </p>
+                    <p>
+                        I am currently working as a <strong>Business Development & Research Intern at InsightAlpha</strong>, focusing on market research and lead generation. I also actively participate in case study competitions, where I've developed solutions for diverse challenges.
+                    </p>
+                    <p>
+                        I am currently seeking opportunities in both <strong>Product Management</strong>, where I can own the lifecycle of a product to create tangible value for users, and <strong>Consulting</strong>, where I can apply my analytical skills to help businesses navigate their most pressing challenges. I am eager to join a team where I can contribute to building innovative and impactful solutions.
+                    </p>
+                </div>
             </section>
             
-            <div class="border-t" style="border-color: var(--border);"></div>
+            <div class="border-t my-16 md:my-24" style="border-color: var(--border);"></div>
 
-            <!-- Skills Section -->
-            <section id="skills" class="reveal">
+            <section id="skills" class="reveal py-16">
                 <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-16" style="color: var(--primary);">Skills & Expertise</h2>
-                <div id="skills-tabs" class="flex flex-wrap justify-center gap-4 mb-8">
-                    <button data-tab="product" class="tab-btn active font-semibold py-3 px-6 rounded-lg transition-all duration-300"><i class="fas fa-project-diagram mr-2"></i>Product & Strategy</button>
-                    <button data-tab="research" class="tab-btn font-semibold py-3 px-6 rounded-lg transition-all duration-300"><i class="fas fa-chart-line mr-2"></i>Research & Analytics</button>
-                    <button data-tab="leadership" class="tab-btn font-semibold py-3 px-6 rounded-lg transition-all duration-300"><i class="fas fa-users mr-2"></i>Leadership & Communication</button>
+                <div id="skills-tabs" class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mb-8">
+                    <button data-tab="product" class="tab-btn active font-semibold py-3 px-6 rounded-lg transition-all duration-300 inline-flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M12 20h.01"></path><path d="M12 4h.01"></path><path d="M4 12h.01"></path><path d="M20 12h.01"></path><path d="M12 12l-8 8"></path><path d="m20 4-8 8"></path><path d="m4 4 16 16"></path></svg>Product & Strategy</button>
+                    <button data-tab="research" class="tab-btn font-semibold py-3 px-6 rounded-lg transition-all duration-300 inline-flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>Research & Analytics</button>
+                    <button data-tab="leadership" class="tab-btn font-semibold py-3 px-6 rounded-lg transition-all duration-300 inline-flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Leadership & Communication</button>
                 </div>
-                <div class="tab-content active" id="product-content">
-                    <div class="grid md:grid-cols-1 gap-8">
-                        <div class="p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300" style="background-color: var(--card); border: 1px solid var(--border);">
-                            <h3 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-road mr-3 text-2xl" style="color: var(--primary);"></i>Product & Strategy</h3>
+                <div class="max-w-4xl mx-auto">
+                    <div class="tab-content active" id="product-content">
+                        <div class="p-8 rounded-xl shadow-lg" style="background-color: var(--card); border: 1px solid var(--border);">
+                            <h3 class="text-xl font-bold mb-4 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3" style="color: var(--primary);"><path d="M12 20h.01"></path><path d="M12 4h.01"></path><path d="M4 12h.01"></path><path d="M20 12h.01"></path><path d="M12 12l-8 8"></path><path d="m20 4-8 8"></path><path d="m4 4 16 16"></path></svg>Product & Strategy</h3>
                             <ul class="list-disc list-inside space-y-2" style="color: var(--subtext);">
                                 <li>Product Roadmapping & Roadmap Prioritization</li>
                                 <li>Go‑to‑Market Strategy & Launch Planning</li>
@@ -214,11 +228,9 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="tab-content hidden" id="research-content">
-                     <div class="grid md:grid-cols-1 gap-8">
-                        <div class="p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300" style="background-color: var(--card); border: 1px solid var(--border);">
-                            <h3 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-chart-line mr-3 text-2xl" style="color: var(--primary);"></i>Research & Analytics</h3>
+                    <div class="tab-content hidden" id="research-content">
+                        <div class="p-8 rounded-xl shadow-lg" style="background-color: var(--card); border: 1px solid var(--border);">
+                            <h3 class="text-xl font-bold mb-4 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3" style="color: var(--primary);"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>Research & Analytics</h3>
                             <ul class="list-disc list-inside space-y-2" style="color: var(--subtext);">
                                 <li>Market Research & Competitive Analysis</li>
                                 <li>Data Analysis (Python, SQL, Excel)</li>
@@ -227,11 +239,9 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="tab-content hidden" id="leadership-content">
-                    <div class="grid md:grid-cols-1 gap-8">
-                        <div class="p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300" style="background-color: var(--card); border: 1px solid var(--border);">
-                            <h3 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-users mr-3 text-2xl" style="color: var(--primary);"></i>Leadership & Communication</h3>
+                    <div class="tab-content hidden" id="leadership-content">
+                        <div class="p-8 rounded-xl shadow-lg" style="background-color: var(--card); border: 1px solid var(--border);">
+                            <h3 class="text-xl font-bold mb-4 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3" style="color: var(--primary);"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Leadership & Communication</h3>
                             <ul class="list-disc list-inside space-y-2" style="color: var(--subtext);">
                                 <li>Stakeholder Management & Collaboration</li>
                                 <li>Team Leadership & Mentoring</li>
@@ -243,33 +253,36 @@
                 </div>
             </section>
 
-            <div class="border-t" style="border-color: var(--border);"></div>
+            <div class="border-t my-16 md:my-24" style="border-color: var(--border);"></div>
 
-            <!-- Journey Section -->
-            <section id="journey" class="reveal">
+            <section id="journey" class="reveal py-16">
                  <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-24" style="color: var(--primary);">Work & Impact Journey</h2>
                  <div class="timeline relative max-w-4xl mx-auto">
-                    <!-- Timeline Item -->
                     <div class="mb-8 flex justify-between items-center w-full right-timeline">
                         <div class="order-1 w-5/12 md:block hidden"></div>
                         <div class="z-20 flex items-center order-1 shadow-xl w-12 h-12 rounded-full" style="background: var(--primary-gradient);">
-                            <i class="fas fa-chart-line text-white mx-auto text-xl"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white mx-auto"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>
                         </div>
                         <div class="order-1 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4" style="background-color: var(--card); border: 1px solid var(--border);">
-                            <p class="font-semibold" style="color: var(--primary);">Jun 2025 – Present</p>
-                            <h3 class="font-bold text-lg mb-1">Research & BD Intern, InsightAlpha</h3>
-                            <p class="text-sm leading-snug tracking-wide" style="color: var(--subtext);">Leading content research in emerging sectors.</p>
+                            <p class="font-semibold" style="color: var(--primary);">June 2025 – Present</p>
+                            <h3 class="font-bold text-lg mb-1">Business Development & Research Intern</h3>
+                            <p class="font-medium text-base mb-2 italic" style="color: var(--accent);">InsightAlpha</p>
+                            <ul class="text-sm list-disc list-inside space-y-1" style="color: var(--subtext);">
+                                <li>Conducting in-depth market research on emerging tech sectors.</li>
+                                <li>Driving business development through targeted lead generation.</li>
+                                <li>Synthesizing data to identify new growth opportunities.</li>
+                            </ul>
                         </div>
                     </div>
-                    <!-- Timeline Item -->
                     <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
                         <div class="order-1 w-5/12 md:block hidden"></div>
                         <div class="z-20 flex items-center order-1 shadow-xl w-12 h-12 rounded-full" style="background: var(--primary-gradient);">
-                            <i class="fas fa-users text-white mx-auto text-xl"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white mx-auto"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                         </div>
                         <div class="order-1 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4" style="background-color: var(--card); border: 1px solid var(--border);">
                             <p class="font-semibold" style="color: var(--primary);">Feb 2023 – Present</p>
-                            <h3 class="font-bold text-lg mb-1">Core Member, Enactus KISS‑KIIT</h3>
+                            <h3 class="font-bold text-lg mb-1">Core Member</h3>
+                            <p class="font-medium text-base mb-2 italic" style="color: var(--accent);">Enactus KISS‑KIIT</p>
                             <ul class="text-sm list-disc list-inside space-y-1 mt-2" style="color: var(--subtext);">
                                 <li>Led market research for social ventures.</li>
                                 <li>Designed go‑to‑market strategies for sustainability.</li>
@@ -277,15 +290,15 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- Timeline Item -->
                     <div class="mb-8 flex justify-between items-center w-full right-timeline">
                         <div class="order-1 w-5/12 md:block hidden"></div>
                         <div class="z-20 flex items-center order-1 shadow-xl w-12 h-12 rounded-full" style="background: var(--primary-gradient);">
-                            <i class="fas fa-briefcase text-white mx-auto text-xl"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white mx-auto"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16z"></path><path d="M16 10h4"></path><path d="M4 10h4"></path><path d="M10 10h4"></path></svg>
                         </div>
                         <div class="order-1 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4" style="background-color: var(--card); border: 1px solid var(--border);">
                             <p class="font-semibold" style="color: var(--primary);">Mar 2024 – Jul 2024</p>
-                            <h3 class="font-bold text-lg mb-1">Product Fellow, Foruppo</h3>
+                            <h3 class="font-bold text-lg mb-1">Product Fellow</h3>
+                             <p class="font-medium text-base mb-2 italic" style="color: var(--accent);">Foruppo</p>
                             <ul class="text-sm list-disc list-inside space-y-1 mt-2" style="color: var(--subtext);">
                                 <li>Conducted consumer insights & competitive analysis.</li>
                                 <li>Collaborated on growth strategies.</li>
@@ -293,15 +306,15 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- Timeline Item -->
                     <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
                         <div class="order-1 w-5/12 md:block hidden"></div>
                         <div class="z-20 flex items-center order-1 shadow-xl w-12 h-12 rounded-full" style="background: var(--primary-gradient);">
-                            <i class="fas fa-industry text-white mx-auto text-xl"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white mx-auto"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         </div>
                         <div class="order-1 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4" style="background-color: var(--card); border: 1px solid var(--border);">
                             <p class="font-semibold" style="color: var(--primary);">May 2024 – Jun 2024</p>
-                            <h3 class="font-bold text-lg mb-1">Intern, ONGC Videsh Ltd.</h3>
+                            <h3 class="font-bold text-lg mb-1">Intern</h3>
+                            <p class="font-medium text-base mb-2 italic" style="color: var(--accent);">ONGC Videsh Ltd.</p>
                             <ul class="text-sm list-disc list-inside space-y-1 mt-2" style="color: var(--subtext);">
                                 <li>Market research & benchmarking.</li>
                                 <li>Assisted IT strategy planning.</li>
@@ -309,11 +322,10 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- Timeline Item -->
-                     <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                    <div class="mb-8 flex justify-between items-center w-full right-timeline">
                         <div class="order-1 w-5/12 md:block hidden"></div>
                         <div class="z-20 flex items-center order-1 shadow-xl w-12 h-12 rounded-full" style="background: var(--primary-gradient);">
-                            <i class="fas fa-hands-helping text-white mx-auto text-xl"></i>
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white mx-auto"><path d="M12 5C12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 5 12 s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         </div>
                         <div class="order-1 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4" style="background-color: var(--card); border: 1px solid var(--border);">
                             <p class="font-semibold" style="color: var(--primary);">Jul 2023 – Oct 2023</p>
@@ -330,36 +342,35 @@
             
             <div class="border-t" style="border-color: var(--border);"></div>
 
-            <!-- Case Studies Section -->
-            <section id="case-studies" class="reveal">
+            <section id="case-studies" class="reveal py-16">
                 <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-16" style="color: var(--primary);">Case Studies</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-heart-pulse text-3xl mb-4" style="color: var(--primary);"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-4" style="color: var(--primary);"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
                         <h3 class="font-bold text-xl mb-2">Smart Health Integration</h3>
                         <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Problem:</strong> No unified AI‑driven platform for personal health tracking.</p>
                         <button onclick="openPDFModal('smart-health-integration.pdf', 'Case Study: Smart Health Integration')" class="font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color: var(--primary); border: 1px solid var(--primary);">View Case Study</button>
                     </div>
                     <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-brain text-3xl mb-4" style="color: var(--primary);"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-4" style="color: var(--primary);"><path d="M12 20v-6m0-4V4m0 4h6m-6 0H6"></path><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path><path d="M12 20a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"></path></svg>
                         <h3 class="font-bold text-xl mb-2">BCN Brainwars</h3>
                         <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Problem:</strong> Nexus Motors aims to enter India's EV market with Voltaris Z and set up local manufacturing.</p>
-                        <button onclick="openPDFModal('BCN.pdf', 'Case Study: BCN Brainwars')" class="font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color: var(--primary); border: 1px solid var(--primary);">View Case Study</button>
+                        <button onclick="openPDFModal('BCN.pdf', 'Case Study: BCN Brainwars')" class="font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color: var(--primary); border: 1px solid var(--border);">View Case Study</button>
                     </div>
                     <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-credit-card text-3xl mb-4" style="color: var(--primary);"></i>
+                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-4" style="color: var(--primary);"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
                         <h3 class="font-bold text-xl mb-2">RuPay Premium Card Strategy</h3>
                         <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Problem:</strong> RuPay lacked appeal in India's premium segment.</p>
                         <button onclick="openPDFModal('rupay-premium-strategy.pdf', 'Case Study: RuPay Premium Card Strategy')" class="font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color: var(--primary); border: 1px solid var(--primary);">View Case Study</button>
                     </div>
                     <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-utensils text-3xl mb-4" style="color: var(--primary);"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-4" style="color: var(--primary);"><path d="M12 5c.4 2.5-1.6 5-4 5s-4.4-2.5-4-5c.4-2.5 2.5-4.4 5-4s4.4 1.9 4 4z"></path><path d="M12 19c.4-2.5-1.6-5-4-5s-4.4 2.5-4 5c.4 2.5 2.5 4.4 5 4s4.4-1.9 4-4z"></path><path d="M20 5c.4 2.5-1.6 5-4 5s-4.4-2.5-4-5c.4-2.5 2.5-4.4 5-4s4.4 1.9 4 4z"></path><path d="M20 19c.4-2.5-1.6-5-4-5s-4.4 2.5-4 5c.4 2.5 2.5 4.4 5 4s4.4-1.9 4-4z"></path></svg>
                         <h3 class="font-bold text-xl mb-2">Zomato Street Food Integration</h3>
                         <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Problem:</strong> Guwahati street vendors not digitally accessible.</p>
                         <button onclick="openPDFModal('zomato-street-food.pdf', 'Case Study: Zomato Street Food Integration')" class="font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color: var(--primary); border: 1px solid var(--primary);">View Case Study</button>
                     </div>
                     <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-tint text-3xl mb-4" style="color: var(--primary);"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-4" style="color: var(--primary);"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0L12 2.69z"></path></svg>
                         <h3 class="font-bold text-xl mb-2">Blitz Hydration Strategy</h3>
                         <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Problem:</strong> Need differentiation vs Gatorade & PRIME.</p>
                         <button onclick="openPDFModal('team-mr-x.pdf', 'Case Study: Blitz Hydration Strategy')" class="font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color: var(--primary); border: 1px solid var(--primary);">View Case Study</button>
@@ -367,14 +378,13 @@
                 </div>
             </section>
 
-            <div class="border-t" style="border-color: var(--border);"></div>
+            <div class="border-t my-16 md:my-24" style="border-color: var(--border);"></div>
             
-            <!-- Research Publications Section -->
             <section class="publications reveal" id="publications">
                 <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-16" style="color: var(--primary);">Research Publications</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
                     <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-file-medical text-3xl mb-4" style="color: var(--primary);"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-4" style="color: var(--primary);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
                         <h3 class="font-bold text-xl mb-2">SDOH-Based ZIP Code Health Forecasting</h3>
                         <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Focus:</strong> Forecasting public health outcomes using XGBoost & Random Forest based on social determinants.</p>
                         <button class="btn btn-outline will-change font-semibold text-sm py-2 px-4 rounded-md mt-auto" onclick="openPDFModal('sdoh-health-forecasting.pdf', 'Research: SDOH Health Forecasting')" style="color: var(--primary); border: 1px solid var(--primary);">
@@ -384,14 +394,13 @@
                 </div>
             </section>
 
-            <div class="border-t" style="border-color: var(--border);"></div>
+            <div class="border-t my-16 md:my-24" style="border-color: var(--border);"></div>
 
-            <!-- Courses & Certifications Section -->
             <section class="certificates reveal" id="certificates">
                 <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-16" style="color: var(--primary);">Courses & Certifications</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-chess text-3xl mb-4" style="color: var(--primary);"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-4" style="color: var(--primary);"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
                         <h3 class="font-bold text-xl mb-2">Strategy & Game Theory</h3>
                         <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Provider:</strong> IIM Ahmedabad via Coursera</p>
                         <button class="btn btn-outline will-change font-semibold text-sm py-2 px-4 rounded-md mt-auto" onclick="openPDFModal('Coursera GKGRPO2ZQM0D.pdf', 'Certificate: Strategy & Game Theory')" style="color: var(--primary); border: 1px solid var(--primary);">
@@ -399,7 +408,7 @@
                         </button>
                     </div>
                     <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-trophy text-3xl mb-4" style="color: var(--primary);"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-4" style="color: var(--primary);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                         <h3 class="font-bold text-xl mb-2">E-Conjecture Finalist</h3>
                         <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Event:</strong> IIM Indore</p>
                         <button class="btn btn-outline will-change font-semibold text-sm py-2 px-4 rounded-md mt-auto" onclick="openPDFModal('Vinayak Pathak_E -conjecture.pdf', 'Certificate: E-Conjecture Finalist')" style="color: var(--primary); border: 1px solid var(--primary);">
@@ -407,7 +416,7 @@
                         </button>
                     </div>
                     <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-award text-3xl mb-4" style="color: var(--primary);"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-4" style="color: var(--primary);"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M8.5 10.5l2 2 5-5"></path></svg>
                         <h3 class="font-bold text-xl mb-2">Enactus India Winner</h3>
                         <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Recognition:</strong> Early Stage Category, 2024</p>
                         <button class="btn btn-outline will-change font-semibold text-sm py-2 px-4 rounded-md mt-auto" onclick="openPDFModal('Enactus India National Exposition 2024.pdf', 'Certificate: Enactus India Winner')" style="color: var(--primary); border: 1px solid var(--primary);">
@@ -415,7 +424,7 @@
                         </button>
                     </div>
                     <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background-color: var(--card); border: 1px solid var(--border);">
-                        <i class="fas fa-chart-bar text-3xl mb-4" style="color: var(--primary);"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-4" style="color: var(--primary);"><path d="M3 3v18h18"></path><path d="M7 12v5h10v-5"></path><path d="M12 12V7"></path><path d="M12 7l-2-2-2 2"></path><path d="M12 7l2-2 2 2"></path></svg>
                         <h3 class="font-bold text-xl mb-2">Business Analytics</h3>
                         <p class="text-sm mb-4 flex-grow" style="color: var(--subtext);"><strong>Provider:</strong> Coursera</p>
                         <button class="btn btn-outline will-change font-semibold text-sm py-2 px-4 rounded-md mt-auto" onclick="openPDFModal('Business Analytics Certificate.pdf', 'Certificate: Business Analytics')" style="color: var(--primary); border: 1px solid var(--primary);">
@@ -425,19 +434,23 @@
                 </div>
             </section>
 
-            <div class="border-t" style="border-color: var(--border);"></div>
+            <div class="border-t my-16 md:my-24" style="border-color: var(--border);"></div>
 
-            <!-- Contact Section -->
-            <section id="contact" class="reveal">
+            <section id="contact" class="reveal py-16">
                 <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-16" style="color: var(--primary);">Get In Touch</h2>
                 <div class="max-w-lg mx-auto text-center">
                     <p class="mb-8" style="color: var(--subtext);">Have a question or want to work together? Feel free to reach out.</p>
-                    <a href="mailto:pathakvinayak31@gmail.com" class="btn-primary text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                        <i class="fas fa-paper-plane mr-2"></i> Send a Message
+                    <a href="mailto:pathakvinayak31@gmail.com" class="btn-primary text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        Send a Message
                     </a>
                     <div class="flex justify-center gap-6 mt-8">
-                        <a href="https://linkedin.com/in/vinayakpathak" target="_blank" class="text-2xl hover:opacity-75" style="color: var(--primary);"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/yourusername" target="_blank" class="text-2xl hover:opacity-75" style="color: var(--primary);"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/vinayakpathak" target="_blank" class="text-2xl hover:opacity-75" style="color: var(--primary);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="https://github.com/yourusername" target="_blank" class="text-2xl hover:opacity-75" style="color: var(--primary);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -448,7 +461,6 @@
         <p>&copy; 2025 Vinayak Pathak. All Rights Reserved.</p>
     </footer>
 
-    <!-- PDF Modal -->
     <div id="pdfModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
         <div class="flex flex-col w-full h-full max-w-4xl max-h-[90vh] rounded-lg shadow-2xl" style="background-color: var(--card);">
             <div class="flex justify-between items-center p-4 border-b" style="border-color: var(--border);">
@@ -461,20 +473,17 @@
         </div>
     </div>
 
-    <!-- Floating Chat Button -->
-    <button id="open-chat-btn" class="fixed bottom-8 right-8 w-16 h-16 rounded-full text-white text-2xl flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform z-50" style="background: var(--primary-gradient);">
-        <i class="fas fa-comment-dots"></i>
+    <button id="open-chat-btn" class="fixed bottom-8 right-8 w-16 h-16 rounded-full text-white text-3xl flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform z-50" style="background: var(--primary-gradient);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
     </button>
 
-    <!-- Chat Modal -->
     <div id="chat-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
         <div class="flex flex-col w-full max-w-2xl h-[80vh] max-h-[700px] rounded-xl shadow-2xl" style="background-color: var(--card);">
             <div class="flex justify-between items-center p-4 border-b" style="border-color: var(--border);">
-                <h3 class="font-bold text-lg flex items-center"><i class="fas fa-robot mr-2" style="color: var(--primary);"></i>AI Assistant</h3>
+                <h3 class="font-bold text-lg flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2" style="color: var(--primary);"><path d="M12 8V4H8"></path><path d="M20 12v4h-4"></path><path d="M4 12v-4h4"></path><path d="M8 16H4v4"></path><rect x="8" y="8" width="8" height="8"></rect></svg>AI Assistant</h3>
                 <button id="close-chat-btn" class="text-2xl w-8 h-8 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">&times;</button>
             </div>
             <div id="chat-log" class="flex-grow p-4 space-y-4 overflow-y-auto" style="background-color: var(--surface);">
-                <!-- Initial AI message -->
                 <div class="flex justify-start">
                     <div class="ai-message chat-message p-3 rounded-lg">
                         <p>Hello! I'm Vinayak's AI assistant. How can I help you today?</p>
@@ -493,7 +502,7 @@
             <form id="chat-form" class="flex gap-2 p-4 border-t" style="border-color: var(--border);">
                 <input type="text" id="chat-input" class="flex-grow p-3 rounded-lg" style="background-color: var(--surface); border: 1px solid var(--border);" placeholder="Ask about a project or skill...">
                 <button type="submit" id="send-btn" class="btn-primary text-white font-semibold py-3 px-5 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                    <i class="fas fa-paper-plane"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                 </button>
             </form>
         </div>
@@ -648,18 +657,34 @@
             window.particles = new ParticleAnimation('particle-canvas');
             window.particles.animate();
 
-            // --- Gemini AI Chatbot ---
+            // --- Chat Modal Logic ---
             const openChatBtn = document.getElementById('open-chat-btn');
             const closeChatBtn = document.getElementById('close-chat-btn');
             const chatModal = document.getElementById('chat-modal');
+            
+            openChatBtn.addEventListener('click', () => {
+                chatModal.classList.remove('hidden');
+                chatModal.classList.add('flex');
+            });
+
+            const closeChat = () => {
+                chatModal.classList.add('hidden');
+                chatModal.classList.remove('flex');
+            };
+
+            closeChatBtn.addEventListener('click', closeChat);
+            chatModal.addEventListener('click', (e) => {
+                if (e.target === chatModal) {
+                    closeChat();
+                }
+            });
+
+            // --- Gemini AI Chatbot ---
             const chatForm = document.getElementById('chat-form');
             const chatInput = document.getElementById('chat-input');
             const chatLog = document.getElementById('chat-log');
             const chatLoader = document.getElementById('chat-loader');
             
-            openChatBtn.addEventListener('click', () => chatModal.classList.remove('hidden'));
-            closeChatBtn.addEventListener('click', () => chatModal.classList.add('hidden'));
-
             const portfolioContext = `You are Vinayak Pathak's helpful AI Assistant. Your goal is to answer questions from recruiters, mentors, and visitors based on the information from Vinayak's portfolio. Be professional, concise, and helpful.
 
             Here is the information about Vinayak Pathak:
@@ -696,13 +721,13 @@
                 chatInput.value = '';
                 chatLoader.classList.remove('hidden');
                 chatLoader.classList.add('flex');
+                chatInput.disabled = true;
 
                 chatHistory.push({ role: "user", parts: [{ text: userMessage }] });
 
                 try {
                     const payload = { contents: chatHistory };
-                    const apiKey = ""; // Handled by environment
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                    const apiUrl = '/.netlify/functions/chat'; // IMPORTANT: This is for Netlify hosting. For local/other hosting, this needs to be changed.
                     
                     const response = await fetch(apiUrl, {
                         method: 'POST',
@@ -724,10 +749,12 @@
 
                 } catch (error) {
                     console.error("Chatbot Error:", error);
-                    appendMessage("I'm having trouble connecting right now. Please try again later.", 'ai');
+                    appendMessage("I'm having trouble connecting right now. Please check the launch guide for API key setup.", 'ai');
                 } finally {
                     chatLoader.classList.add('hidden');
                     chatLoader.classList.remove('flex');
+                    chatInput.disabled = false;
+                    chatInput.focus();
                 }
             });
 
