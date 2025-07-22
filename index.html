@@ -695,27 +695,7 @@
             
             Start the conversation by introducing yourself. When a user asks a question, use the data above to formulate your answer.`;
 
-            let chatHistory = [{
-                role: "user",
-                parts: [{ text: portfolioContext }]
-            }, {
-                role: "model",
-                parts: [{ text: "Hello! I'm Vinayak's AI assistant. Feel free to ask me anything about his skills, experience, or projects. How can I help you?" }]
-            }];
-
-            chatForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const userMessage = chatInput.value.trim();
-                if (!userMessage) return;
-
-                appendMessage(userMessage, 'user');
-                chatInput.value = '';
-                chatLoader.classList.remove('hidden');
-                chatLoader.classList.add('flex');
-                chatInput.disabled = true;
-
-                chatHistory.push({ role: "user", parts: [{ text: userMessage }] });
-
+            
                 try {
                     const payload = { contents: chatHistory };
                     const apiUrl = '/.netlify/functions/chat'; // IMPORTANT: This is for Netlify hosting. For local/other hosting, this needs to be changed.
