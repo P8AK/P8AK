@@ -473,16 +473,7 @@
         </div>
     </div>
 
-    <button id="open-chat-btn" class="fixed bottom-8 right-8 w-16 h-16 rounded-full text-white text-3xl flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform z-50" style="background: var(--primary-gradient);">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-    </button>
-
-    <div id="chat-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-        <div class="flex flex-col w-full max-w-2xl h-[80vh] max-h-[700px] rounded-xl shadow-2xl" style="background-color: var(--card);">
-            <div class="flex justify-between items-center p-4 border-b" style="border-color: var(--border);">
-                <h3 class="font-bold text-lg flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2" style="color: var(--primary);"><path d="M12 8V4H8"></path><path d="M20 12v4h-4"></path><path d="M4 12v-4h4"></path><path d="M8 16H4v4"></path><rect x="8" y="8" width="8" height="8"></rect></svg>AI Assistant</h3>
-                <button id="close-chat-btn" class="text-2xl w-8 h-8 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">&times;</button>
-            </div>
+   
             <div id="chat-log" class="flex-grow p-4 space-y-4 overflow-y-auto" style="background-color: var(--surface);">
                 <div class="flex justify-start">
                     <div class="ai-message chat-message p-3 rounded-lg">
