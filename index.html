@@ -1,537 +1,485 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vinayak Pathak | Product & Strategy Portfolio</title>
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --bg: #ffffff; --surface: #f8f9fa; --card: #ffffff;
-      --text: #333333; --subtext: #666666; --primary: #667eea;
-      --accent: #764ba2; --border: #e9ecef;
-      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --glow-color: rgba(102,126,234,0.3);
-    }
-    [data-theme="dark"] {
-      --bg:#0a0a0f;--surface:#1a1a25;--card:#1e1e2e;--text:#fff;
-      --subtext:#b3b3b3;--primary:#a855f7;--accent:#9333ea;
-      --border:#2a2a35;
-      --primary-gradient:linear-gradient(135deg,#a855f7 0%,#9333ea 100%);
-      --glow-color:rgba(168,85,247,0.4);
-    }
-    body {
-      background:var(--bg); color:var(--text);
-      font-family:'Sora',sans-serif;
-      transition:background 0.3s,color 0.3s;
-    }
-    .gradient-text {
-      background:var(--primary-gradient);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-    .logo-v { /* V in header */
-      background:var(--primary-gradient);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-    .btn-primary { background:var(--primary-gradient); }
-    .section-title::after {
-      content:''; position:absolute; bottom:-1rem;
-      left:50%; transform:translateX(-50%);
-      width:80px; height:4px; background:var(--primary-gradient);
-      border-radius:2px;
-    }
-    .timeline::after {
-      content:''; position:absolute; width:4px;
-      background:var(--primary-gradient);
-      box-shadow:0 0 20px var(--glow-color);
-      top:0; bottom:0; left:50%; margin-left:-2px;
-    }
-    #particle-canvas {
-      position:fixed; top:0; left:0; width:100%; height:100%;
-      z-index:-1; pointer-events:none;
-    }
-    .reveal {
-      opacity:0; transform:translateY(40px);
-      transition:opacity 0.8s ease-out,transform 0.8s ease-out;
-    }
-    .reveal.active { opacity:1; transform:translateY(0); }
-    .loader-dots div {
-      animation:loader-dots 1.5s infinite ease-in-out;
-    }
-    .loader-dots div:nth-child(2) { animation-delay:0.2s; }
-    .loader-dots div:nth-child(3) { animation-delay:0.4s; }
-    @keyframes loader-dots {
-      0%,80%,100% { transform:scale(0); }
-      40% { transform:scale(1); }
-    }
-  </style>
-</head>
-<body class="overflow-x-hidden">
-  <canvas id="particle-canvas"></canvas>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vinayak Pathak | Product • Strategy • Technology</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Header -->
-  <header id="header" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/5 dark:bg-black/5 border-b border-white/10 dark:border-black/10 transition-all duration-300">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="text-4xl font-extrabold">
-        <span class="logo-v">V</span><span style="color:var(--text)">P</span>
-      </div>
-      <label class="relative inline-block w-16 h-8">
-        <input type="checkbox" id="theme-toggle" class="opacity-0 w-0 h-0">
-        <span class="absolute inset-0 rounded-full flex items-center justify-between px-2 transition-all duration-300" style="background:var(--primary-gradient);">
-          <i class="fas fa-sun text-white"></i>
-          <i class="fas fa-moon text-white"></i>
-        </span>
-        <span id="theme-knob" class="absolute h-6 w-6 left-1 top-1 bg-white rounded-full transition-all duration-300"></span>
-      </label>
-    </div>
-  </header>
+<style>
+:root{
+ --bg:#0a0a0f;--surface:#111118;--card:#15151e;--text:#f7f7fb;--muted:#a6a6b3;
+ --primary:#a855f7;--secondary:#ec4899;--accent:#22d3ee;--border:#262632;
+ --grad:linear-gradient(135deg,#a855f7 0%,#ec4899 52%,#22d3ee 100%);
+ --shadow:0 20px 60px rgba(0,0,0,.28);
+}
+[data-theme="light"]{--bg:#fafafa;--surface:#f1f1f5;--card:#fff;--text:#16161c;--muted:#626270;--border:#dedee7;--shadow:0 18px 45px rgba(25,25,40,.10)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Sora',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}
+.header{position:fixed;inset:0 0 auto;background:rgba(10,10,15,.62);backdrop-filter:blur(18px);z-index:1000;border-bottom:1px solid transparent}
+[data-theme="light"] .header{background:rgba(250,250,250,.72)}
+.header.scrolled{border-color:var(--border);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.header-content{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:700;font-size:1.05rem}.logo span{color:var(--primary)}
+.nav{display:flex;gap:1.25rem;align-items:center}.nav a{font-size:.82rem;color:var(--muted);transition:.25s}.nav a:hover{color:var(--text)}
+.theme-toggle{display:inline-block;width:50px;height:26px}.theme-toggle input{display:none}.toggle-slider{height:26px;border-radius:30px;background:var(--grad);padding:3px;position:relative}.toggle-knob{width:20px;height:20px;border-radius:50%;background:#fff;display:grid;place-items:center;position:absolute;left:3px;transition:.25s}.theme-toggle input:checked+.toggle-slider .toggle-knob{transform:translateX(24px)}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:650px;height:650px;right:-220px;top:50px;background:radial-gradient(circle,rgba(168,85,247,.22),transparent 68%);filter:blur(10px)}
+.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:4rem;align-items:center}
+.eyebrow{display:inline-flex;gap:.55rem;align-items:center;color:#d8b4fe;background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.25);padding:.45rem .8rem;border-radius:999px;font-size:.75rem;margin-bottom:1.25rem}
+.dot{width:7px;height:7px;background:#22d3ee;border-radius:50%;box-shadow:0 0 12px #22d3ee}
+.hero h1{font-size:clamp(3rem,7vw,6.2rem);line-height:.98;letter-spacing:-.06em;margin-bottom:1.5rem}
+.gradient{background:var(--grad);-webkit-background-clip:text;color:transparent}
+.hero-copy{font-size:1.1rem;color:var(--muted);max-width:680px}.hero-copy strong{color:var(--text)}
+.hero-actions{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2rem}.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.2rem;border-radius:11px;border:1px solid var(--border);font:inherit;font-size:.85rem;cursor:pointer;transition:.25s}
+.btn-primary{background:var(--grad);color:white;border:0;box-shadow:0 12px 30px rgba(168,85,247,.2)}.btn-secondary{background:var(--card)}.btn:hover{transform:translateY(-3px)}
+.hero-card{background:linear-gradient(145deg,rgba(168,85,247,.14),rgba(34,211,238,.05));border:1px solid var(--border);border-radius:24px;padding:1.4rem;box-shadow:var(--shadow);transform:rotate(2deg)}
+.hero-card-inner{background:var(--card);border-radius:18px;padding:1.4rem}.mini-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:1rem}.stat{padding:1rem;border:1px solid var(--border);border-radius:14px}.stat b{display:block;font-size:1.5rem}.stat span{font-size:.7rem;color:var(--muted)}
+section{padding:100px 0;position:relative}.section-head{display:flex;justify-content:space-between;gap:2rem;align-items:end;margin-bottom:2.5rem}.section-title{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.04em}.section-kicker{color:var(--primary);font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;font-weight:700;margin-bottom:.45rem}.section-desc{color:var(--muted);max-width:520px;font-size:.9rem}
+.about{background:var(--surface);border-block:1px solid var(--border)}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}.about p{color:var(--muted);margin-bottom:1rem}.about p strong{color:var(--text)}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}.chip{border:1px solid var(--border);background:var(--card);padding:.5rem .75rem;border-radius:999px;font-size:.72rem;color:var(--muted)}
+.skills-grid,.project-grid,.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.skill-card,.project,.cert{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.5rem;transition:.3s}.skill-card:hover,.project:hover,.cert:hover{transform:translateY(-6px);border-color:rgba(168,85,247,.5);box-shadow:var(--shadow)}
+.icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:rgba(168,85,247,.12);color:var(--primary);margin-bottom:1rem}.skill-card h3,.project h3,.cert h3{font-size:1rem;margin-bottom:.7rem}.skill-card p,.project p,.cert p{font-size:.8rem;color:var(--muted)}.skill-list{list-style:none;margin-top:.9rem}.skill-list li{font-size:.75rem;color:var(--muted);padding:.3rem 0;border-bottom:1px dashed var(--border)}
+.impact{background:var(--surface);border-block:1px solid var(--border)}.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:18px;overflow:hidden}.impact-item{background:var(--surface);padding:1.7rem}.impact-item b{font-size:2rem;display:block}.impact-item span{color:var(--muted);font-size:.72rem}
+.timeline{position:relative;max-width:900px;margin:auto}.timeline:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border)}.timeline-item{width:50%;padding:0 2.2rem 2.2rem;position:relative}.timeline-item.left{text-align:right}.timeline-item.right{margin-left:50%}.timeline-item:after{content:"";position:absolute;top:8px;width:11px;height:11px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 5px rgba(168,85,247,.1)}.timeline-item.left:after{right:-5px}.timeline-item.right:after{left:-5px}.timeline-content{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.25rem}.timeline-date{color:var(--primary);font-size:.7rem;font-weight:700}.timeline-content h3{font-size:.95rem;margin:.3rem 0}.timeline-content p,.timeline-content li{font-size:.75rem;color:var(--muted)}.timeline-content ul{padding-left:1.1rem}
+.project-grid{grid-template-columns:repeat(2,1fr)}.project.featured{grid-column:span 2;background:linear-gradient(145deg,rgba(168,85,247,.12),var(--card))}
+.project-tag{display:inline-block;font-size:.65rem;color:#d8b4fe;border:1px solid rgba(168,85,247,.25);border-radius:999px;padding:.3rem .55rem;margin-bottom:.8rem}.project p{margin-bottom:1rem}.project-meta{display:flex;gap:.5rem;flex-wrap:wrap}.project-meta span{font-size:.65rem;color:var(--muted);border:1px solid var(--border);padding:.3rem .5rem;border-radius:7px}
+.case-links{margin-top:1rem}.btn-outline{background:transparent;color:var(--primary);border-color:rgba(168,85,247,.45);font-size:.75rem}
+.contact{background:var(--surface);border-top:1px solid var(--border)}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:1rem}.contact-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.6rem}.contact-row{display:flex;gap:.8rem;align-items:center;margin:1rem 0;color:var(--muted);font-size:.8rem}.contact-row i{color:var(--primary);width:18px}.socials{display:flex;gap:.6rem;margin-top:1.5rem}.socials a{width:40px;height:40px;border:1px solid var(--border);border-radius:10px;display:grid;place-items:center;color:var(--muted);transition:.2s}.socials a:hover{color:var(--text);border-color:var(--primary)}
+.form-group{margin-bottom:1rem}.form-group label{display:block;font-size:.72rem;color:var(--muted);margin-bottom:.4rem}.form-group input,.form-group textarea{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.8rem;color:var(--text);font:inherit;font-size:.8rem}.form-group input:focus,.form-group textarea:focus{outline:0;border-color:var(--primary)}
+.footer{padding:2rem 0;color:var(--muted);font-size:.7rem;text-align:center;border-top:1px solid var(--border)}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:2000;align-items:center;justify-content:center;padding:1rem}.modal-container{width:min(950px,95vw);height:min(82vh,760px);background:var(--bg);border-radius:18px;overflow:hidden}.modal-header{height:55px;display:flex;align-items:center;justify-content:space-between;padding:0 1rem;border-bottom:1px solid var(--border)}.modal-header h3{font-size:.9rem}.modal-close{background:none;border:0;color:var(--text);font-size:1.2rem;cursor:pointer}.modal-body,.modal-body iframe{width:100%;height:calc(100% - 55px);border:0}
+.loading-overlay{position:fixed;inset:0;background:var(--bg);z-index:9999;display:grid;place-items:center}.loader{width:38px;height:38px;border:3px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.reveal-element{opacity:0;transform:translateY(24px);transition:.7s}.revealed{opacity:1;transform:none}
+@media(max-width:800px){.nav{display:none}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero-card{max-width:420px;margin:auto}.skills-grid,.cert-grid{grid-template-columns:1fr}.impact-grid{grid-template-columns:1fr 1fr}.project-grid{grid-template-columns:1fr}.project.featured{grid-column:auto}.timeline:before{left:7px}.timeline-item,.timeline-item.right{width:100%;margin-left:0;padding-left:2rem;text-align:left}.timeline-item.left:after,.timeline-item.right:after{left:2px;right:auto}.section-head{display:block}.section-desc{margin-top:.8rem}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal-element{opacity:1;transform:none}}
+</style>
 
-  <!-- Hero -->
-  <main>
-    <section class="min-h-screen flex items-center justify-center text-center px-4 pt-24 pb-12">
-      <div class="max-w-4xl mx-auto">
-        <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4">
-          <span class="gradient-text">Vinayak Pathak</span>
-        </h1>
-        <p class="text-lg md:text-xl mb-8 font-light" style="color:var(--subtext);">
-          Product Strategy • Market Research • Business & Social Impact
-        </p>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button onclick="openPDFModal('vinayak-resume.pdf','Resume')" class="btn-primary text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center">
-            <i class="fas fa-file-alt mr-2"></i>View Resume
-          </button>
-          <a href="#contact" class="bg-gray-200 dark:bg-gray-700 font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center" style="color:var(--primary);">
-            <i class="fas fa-envelope-open-text mr-2"></i>Get In Touch
-          </a>
-        </div>
-      </div>
-    </section>
+</head><body>
 
-    <div class="container mx-auto px-6">
-      <!-- About Me -->
-      <section id="about" class="reveal text-center py-12 md:py-16">
-        <h2 class="section-title relative text-3xl md:text-4xl font-bold mb-16" style="color:var(--primary);">About Me</h2>
-        <div class="max-w-4xl mx-auto text-left text-lg space-y-4" style="color:var(--subtext);">
-          <p>Hi, I’m Vinayak Pathak, a results-driven Computer Science Engineering student at KIIT with a passion for product management, market research, and business strategy. I’ve worked with organizations like ONGC Videsh, Foruppo, and Growth Foundation of India, where I contributed to strategic planning, market research, and impactful decision-making.</p>
-          <p>I strive to blend technology, business strategy, and creative design to build products that not only solve problems but also inspire change.</p>
-        </div>
-      </section>
+<div class="loading-overlay" id="loadingOverlay"><div class="loader"></div></div>
+<div class="cursor" id="cursor"></div><div class="cursor-follower" id="cursorFollower"></div>
+<header class="header" id="header">
+ <div class="container header-content">
+  <a class="logo" href="#">VP<span>.</span></a>
+  <nav class="nav">
+   <a href="#about">About</a><a href="#skills">Skills</a><a href="#journey">Journey</a><a href="#projects">Projects</a><a href="#case-studies">Case Studies</a><a href="#contact">Contact</a>
+  </nav>
+  <label class="theme-toggle" for="theme-checkbox"><input type="checkbox" id="theme-checkbox"><div class="toggle-slider"><div class="toggle-knob"><i class="fas fa-moon" style="color:#333;font-size:9px"></i></div></div></label>
+ </div>
+</header>
 
-      <div class="border-t my-16" style="border-color:var(--border);"></div>
-
-      <!-- Skills & Expertise -->
-      <section id="skills" class="reveal py-16">
-        <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-16" style="color:var(--primary);">Skills & Expertise</h2>
-        <div id="skills-tabs" class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mb-8">
-          <button data-tab="product" class="tab-btn active font-semibold py-3 px-6 rounded-lg inline-flex items-center justify-center">
-            <i class="fas fa-project-diagram mr-2"></i>Product & Strategy
-          </button>
-          <button data-tab="research" class="tab-btn font-semibold py-3 px-6 rounded-lg inline-flex items-center justify-center">
-            <i class="fas fa-chart-line mr-2"></i>Research & Analytics
-          </button>
-          <button data-tab="leadership" class="tab-btn font-semibold py-3 px-6 rounded-lg inline-flex items-center justify-center">
-            <i class="fas fa-user-friends mr-2"></i>Leadership & Communication
-          </button>
-        </div>
-        <div class="max-w-4xl mx-auto">
-          <div class="tab-content active" id="product-content">
-            <div class="p-8 rounded-xl shadow-lg" style="background:var(--card); border:1px solid var(--border);">
-              <h3 class="text-xl font-bold mb-4"><i class="fas fa-cogs mr-2" style="color:var(--primary);"></i>Product & Strategy</h3>
-              <ul class="list-disc list-inside space-y-2" style="color:var(--subtext);">
-                <li>Product Roadmapping & Roadmap Prioritization</li>
-                <li>Go‑to‑Market Strategy & Launch Planning</li>
-                <li>Business Model & Revenue Strategy</li>
-                <li>Agile Methodologies & Sprint Planning</li>
-              </ul>
-            </div>
-          </div>
-          <div class="tab-content hidden" id="research-content">
-            <div class="p-8 rounded-xl shadow-lg" style="background:var(--card); border:1px solid var(--border);">
-              <h3 class="text-xl font-bold mb-4"><i class="fas fa-search mr-2" style="color:var(--primary);"></i>Research & Analytics</h3>
-              <ul class="list-disc list-inside space-y-2" style="color:var(--subtext);">
-                <li>Market Research & Competitive Analysis</li>
-                <li>Data Analysis (Python, SQL, Excel)</li>
-                <li>UX Research & A/B Testing</li>
-                <li>Data‑Driven Decision Making</li>
-              </ul>
-            </div>
-          </div>
-          <div class="tab-content hidden" id="leadership-content">
-            <div class="p-8 rounded-xl shadow-lg" style="background:var(--card); border:1px solid var(--border);">
-              <h3 class="text-xl font-bold mb-4"><i class="fas fa-users mr-2" style="color:var(--primary);"></i>Leadership & Communication</h3>
-              <ul class="list-disc list-inside space-y-2" style="color:var(--subtext);">
-                <li>Stakeholder Management & Collaboration</li>
-                <li>Team Leadership & Mentoring</li>
-                <li>Presentation & Pitch Deck Design</li>
-                <li>Critical Thinking & Problem Solving</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="border-t my-16" style="border-color:var(--border);"></div>
-
-      <!-- Work & Impact Journey -->
-      <section id="journey" class="reveal py-16">
-        <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-24" style="color:var(--primary);">Work & Impact Journey</h2>
-        <div class="timeline relative max-w-4xl mx-auto">
-          <!-- InsightAlpha -->
-          <div class="mb-8 flex justify-between items-center w-full right-timeline">
-            <div class="order-1 w-5/12 md:block hidden"></div>
-            <div class="z-20 flex items-center order-1 w-12 h-12 rounded-full shadow-xl" style="background:var(--primary-gradient);">
-              <i class="fas fa-briefcase text-white mx-auto"></i>
-            </div>
-            <div class="order-1 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4" style="background:var(--card); border:1px solid var(--border);">
-              <p class="font-semibold" style="color:var(--primary);">June 2025 – Present</p>
-              <h3 class="font-bold text-lg mb-1">Business Development & Research Intern</h3>
-              <p class="font-medium italic mb-2" style="color:var(--accent);">InsightAlpha</p>
-              <ul class="list-disc list-inside text-sm" style="color:var(--subtext);">
-                <li>Conducting in-depth market research on emerging tech sectors.</li>
-                <li>Driving business development through targeted lead generation.</li>
-                <li>Synthesizing data to identify new growth opportunities.</li>
-              </ul>
-            </div>
-          </div>
-          <!-- Enactus -->
-          <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-            <div class="order-1 w-5/12 md:block hidden"></div>
-            <div class="z-20 flex items-center order-1 w-12 h-12 rounded-full shadow-xl" style="background:var(--primary-gradient);">
-              <i class="fas fa-lightbulb text-white mx-auto"></i>
-            </div>
-            <div class="order-1 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4" style="background:var(--card); border:1px solid var(--border);">
-              <p class="font-semibold" style="color:var(--primary);">Feb 2023 – Present</p>
-              <h3 class="font-bold text-lg mb-1">Project & Ideation </h3>
-              <p class="font-medium italic mb-2" style="color:var(--accent);">Enactus KISS‑KIIT</p>
-              <ul class="list-disc list-inside text-sm" style="color:var(--subtext);">
-                <li>Led market research for social ventures.</li>
-                <li>Designed go‑to‑market strategies for sustainability.</li>
-                <li>Coordinated sponsorship & events.</li>
-              </ul>
-            </div>
-          </div>
-          <!-- Foruppo -->
-          <div class="mb-8 flex justify-between items-center w-full right-timeline">
-            <div class="order-1 w-5/12 md:block hidden"></div>
-            <div class="z-20 flex items-center order-1 w-12 h-12 rounded-full shadow-xl" style="background:var(--primary-gradient);">
-              <i class="fas fa-chart-line text-white mx-auto"></i>
-            </div>
-            <div class="order-1 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4" style="background:var(--card); border:1px solid var(--border);">
-              <p class="font-semibold" style="color:var(--primary);">Mar 2024 – Jul 2024</p>
-              <h3 class="font-bold text-lg mb-1">Product Fellow</h3>
-               <p class="font-medium italic mb-2" style="color:var(--accent);">Foruppo</p>
-              <ul class="list-disc list-inside text-sm" style="color:var(--subtext);">
-                <li>Conducted consumer insights & competitive analysis.</li>
-                <li>Collaborated on growth strategies.</li>
-                <li>Built industry networks.</li>
-              </ul>
-            </div>
-          </div>
-          <!-- ONGC -->
-          <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-            <div class="order-1 w-5/12 md:block hidden"></div>
-            <div class="z-20 flex items-center order-1 w-12 h-12 rounded-full shadow-xl" style="background:var(--primary-gradient);">
-              <i class="fas fa-industry text-white mx-auto"></i>
-            </div>
-            <div class="order-1 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4" style="background:var(--card); border:1px solid var(--border);">
-              <p class="font-semibold" style="color:var(--primary);">May 2024 – Jun 2024</p>
-              <h3 class="font-bold text-lg mb-1"> IT & Research Intern</h3>
-               <p class="font-medium italic mb-2" style="color:var(--accent);">ONGC Videsh Ltd.</p>
-              <ul class="list-disc list-inside text-sm" style="color:var(--subtext);">
-                <li>Market research & benchmarking.</li>
-                <li>Assisted in IT strategy planning.</li>
-                <li>Exposure to SAP modules.</li>
-              </ul>
-            </div>
-          </div>
-          <!-- Growth Foundation -->
-          <div class="mb-8 flex justify-between items-center w-full right-timeline">
-            <div class="order-1 w-5/12 md:block hidden"></div>
-            <div class="z-20 flex items-center order-1 w-12 h-12 rounded-full shadow-xl" style="background:var(--primary-gradient);">
-              <i class="fas fa-hands-helping text-white mx-auto"></i>
-            </div>
-            <div class="order-1 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4" style="background:var(--card); border:1px solid var(--border);">
-              <p class="font-semibold" style="color:var(--primary);">Jul 2023 – Oct 2023</p>
-              <h3 class="font-bold text-lg mb-1">Intern</h3>
-               <p class="font-medium italic mb-2" style="color:var(--accent);">Growth Foundation of India</p>
-              <ul class="list-disc list-inside text-sm" style="color:var(--subtext);">
-                <li>Researched tribal health & education policies.</li>
-                <li>Supported fundraising & outreach strategies.</li>
-                <li>Managed impact reporting.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="border-t my-16" style="border-color:var(--border);"></div>
-
-      <!-- Case Studies -->
-      <section id="case-studies" class="reveal py-16">
-        <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-16" style="color:var(--primary);">Case Studies</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Smart Health -->
-          <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background:var(--card); border:1px solid var(--border);">
-            <i class="fas fa-heartbeat fa-2x mb-4" style="color:var(--primary);"></i>
-            <h3 class="font-bold text-xl mb-2">Smart Health Integration</h3>
-            <p class="text-sm mb-4 flex-grow" style="color:var(--subtext);"><strong>Problem:</strong> No unified AI‑driven platform for personal health tracking.</p>
-            <button onclick="openPDFModal('smart-health-integration.pdf','Smart Health Integration')" class="font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color:var(--primary); border:1px solid var(--primary);">View Case Study</button>
-          </div>
-          <!-- BCN Brainwars -->
-          <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background:var(--card); border:1px solid var(--border);">
-            <i class="fas fa-car-battery fa-2x mb-4" style="color:var(--primary);"></i>
-            <h3 class="font-bold text-xl mb-2">BCN Brainwars</h3>
-            <p class="text-sm mb-4 flex-grow" style="color:var(--subtext);"><strong>Problem:</strong> Nexus Motors’ EV market entry & local manufacturing setup.</p>
-            <button onclick="openPDFModal('BCN.pdf','BCN Brainwars')" class="font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color:var(--primary); border:1px solid var(--primary);">View Case Study</button>
-          </div>
-          <!-- RuPay -->
-          <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background:var(--card); border:1px solid var(--border);">
-            <i class="fas fa-credit-card fa-2x mb-4" style="color:var(--primary);"></i>
-            <h3 class="font-bold text-xl mb-2">RuPay Premium Card Strategy</h3>
-            <p class="text-sm mb-4 flex-grow" style="color:var(--subtext);"><strong>Problem:</strong> RuPay lacked appeal in India’s premium segment.</p>
-            <button onclick="openPDFModal('rupay-premium-strategy.pdf','RuPay Premium')" class="font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color:var(--primary); border:1px solid var(--primary);">View Case Study</button>
-          </div>
-          <!-- Zomato -->
-          <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background:var(--card); border:1px solid var(--border);">
-            <i class="fas fa-utensils fa-2x mb-4" style="color:var(--primary);"></i>
-            <h3 class="font-bold text-xl mb-2">Zomato Street Food Integration</h3>
-            <p class="text-sm mb-4 flex-grow" style="color:var(--subtext);"><strong>Problem:</strong> Guwahati street vendors not digitally accessible.</p>
-            <button onclick="openPDFModal('zomato-street-food.pdf','Zomato Street Food')" class="font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color:var(--primary); border:1px solid var(--primary);">View Case Study</button>
-          </div>
-          <!-- Blitz -->
-          <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background:var(--card); border:1px solid var(--border);">
-            <i class="fas fa-flask fa-2x mb-4" style="color:var(--primary);"></i>
-            <h3 class="font-bold text-xl mb-2">Blitz Hydration Strategy</h3>
-            <p class="text-sm mb-4 flex-grow" style="color:var(--subtext);"><strong>Problem:</strong> Need differentiation vs Gatorade & PRIME.</p>
-            <button onclick="openPDFModal('team-mr-x.pdf','Blitz Hydration')" class="font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color:var(--primary); border:1px solid var(--primary);">View Case Study</button>
-          </div>
-        </div>
-      </section>
-
-      <div class="border-t my-16" style="border-color:var(--border);"></div>
-
-      <!-- Publications -->
-      <section id="publications" class="reveal py-16">
-        <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-16" style="color:var(--primary);">Research Publications</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-          <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background:var(--card); border:1px solid var(--border);">
-            <i class="fas fa-file-medical-alt fa-2x mb-4" style="color:var(--primary);"></i>
-            <h3 class="font-bold text-xl mb-2">SDOH-Based ZIP Code Health Forecasting</h3>
-            <p class="text-sm mb-4 flex-grow" style="color:var(--subtext);"><strong>Focus:</strong> Forecasting public health outcomes using XGBoost & Random Forest.</p>
-            <button onclick="openPDFModal('sdoh-health-forecasting.pdf','SDOH Forecasting')" class="btn btn-outline font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color:var(--primary); border:1px solid var(--primary);">View Paper</button>
-          </div>
-        </div>
-      </section>
-
-      <div class="border-t my-16" style="border-color:var(--border);"></div>
-
-      <!-- Certificates -->
-      <section id="certificates" class="reveal py-16">
-        <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-16" style="color:var(--primary);">Courses & Certifications</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Strategy & Game Theory -->
-          <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background:var(--card); border:1px solid var(--border);">
-            <i class="fas fa-chalkboard-teacher fa-2x mb-4" style="color:var(--primary);"></i>
-            <h3 class="font-bold text-xl mb-2">Strategy & Game Theory</h3>
-            <p class="text-sm mb-4 flex-grow" style="color:var(--subtext);"><strong>Provider:</strong> IIM Ahmedabad via Coursera</p>
-            <button onclick="openPDFModal('Coursera GKGRPO2ZQM0D.pdf','Strategy & Game Theory')" class="btn btn-outline font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color:var(--primary); border:1px solid var(--primary);">View Certificate</button>
-          </div>
-          <!-- E-Conjecture -->
-          <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background:var(--card); border:1px solid var(--border);">
-            <i class="fas fa-award fa-2x mb-4" style="color:var(--primary);"></i>
-            <h3 class="font-bold text-xl mb-2">E-Conjecture Finalist</h3>
-            <p class="text-sm mb-4 flex-grow" style="color:var(--subtext);"><strong>Event:</strong> IIM Indore</p>
-            <button onclick="openPDFModal('Vinayak Pathak_E -conjecture.pdf','E-Conjecture Finalist')" class="btn btn-outline font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color:var(--primary); border:1px solid var(--primary);">View Certificate</button>
-          </div>
-          <!-- Enactus -->
-          <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background:var(--card); border:1px solid var(--border);">
-            <i class="fas fa-globe fa-2x mb-4" style="color:var(--primary);"></i>
-            <h3 class="font-bold text-xl mb-2">Enactus India Winner</h3>
-            <p class="text-sm mb-4 flex-grow" style="color:var(--subtext);"><strong>Recognition:</strong> Early Stage Category, 2024</p>
-            <button onclick="openPDFModal('Enactus India National Exposition 2024.pdf','Enactus Winner')" class="btn btn-outline font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color:var(--primary); border:1px solid var(--primary);">View Certificate</button>
-          </div>
-          <!-- Business Analytics -->
-          <div class="p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" style="background:var(--card); border:1px solid var(--border);">
-            <i class="fas fa-chart-pie fa-2x mb-4" style="color:var(--primary);"></i>
-            <h3 class="font-bold text-xl mb-2">Business Analytics</h3>
-            <p class="text-sm mb-4 flex-grow" style="color:var(--subtext);"><strong>Provider:</strong> Coursera</p>
-            <button onclick="openPDFModal('Business Analytics Certificate.pdf','Business Analytics')" class="btn btn-outline font-semibold text-sm py-2 px-4 rounded-md mt-auto" style="color:var(--primary); border:1px solid var(--primary);">View Certificate</button>
-          </div>
-        </div>
-      </section>
-
-      <div class="border-t my-16" style="border-color:var(--border);"></div>
-
-      <!-- Contact -->
-      <section id="contact" class="reveal py-16">
-        <h2 class="section-title relative text-3xl md:text-4xl font-bold text-center mb-16" style="color:var(--primary);">Get In Touch</h2>
-        <div class="max-w-lg mx-auto text-center">
-          <p class="mb-8" style="color:var(--subtext);">Have a question or want to work together? Feel free to reach out.</p>
-          <a href="mailto:pathakvinayak31@gmail.com" class="btn-primary text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center">
-            <i class="fas fa-paper-plane mr-2"></i>Send a Message
-          </a>
-          <div class="flex justify-center gap-6 mt-8">
-            <a href="https://linkedin.com/in/vinayakpathak" target="_blank" class="text-2xl hover:opacity-75" style="color:var(--primary);">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/yourusername" target="_blank" class="text-2xl hover:opacity-75" style="color:var(--primary);">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="text-center py-8 mt-16 md:mt-24" style="color:var(--subtext); background:var(--surface);">
-    <p>&copy; 2025 Vinayak Pathak. All Rights Reserved.</p>
-  </footer>
-
-  <!-- PDF Modal -->
-  <div id="pdfModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-    <div class="flex flex-col w-full h-full max-w-4xl max-h-[90vh] rounded-lg shadow-2xl" style="background:var(--card);">
-      <div class="flex justify-between items-center p-4 border-b" style="border-color:var(--border);">
-        <h3 id="modalTitle" class="font-bold text-lg">Document</h3>
-        <button onclick="closePDFModal()" class="text-2xl w-8 h-8 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">&times;</button>
-      </div>
-      <div class="flex-grow p-1">
-        <iframe id="pdfFrame" class="w-full h-full" frameborder="0"></iframe>
-      </div>
-    </div>
+<main>
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+   <div class="eyebrow"><span class="dot"></span> Product • Strategy • Technology</div>
+   <h1>Hi, I'm <span class="gradient">Vinayak.</span></h1>
+   <p class="hero-copy">A <strong>KIIT B.Tech graduate</strong> who likes turning ambiguous problems into clear products, strategies and experiments — with a foundation across technology, market research and business.</p>
+   <div class="hero-actions">
+    <button class="btn btn-primary" onclick="openPDFModal('vinayak-resume.pdf')"><i class="fas fa-file-alt"></i> View Resume</button>
+    <a href="#projects" class="btn btn-secondary"><i class="fas fa-arrow-down"></i> Explore My Work</a>
+   </div>
   </div>
+  <div class="hero-card">
+   <div class="hero-card-inner">
+    <span class="mini-label">What I bring</span>
+    <h3 style="margin-top:.5rem;font-size:1.35rem">Builder mindset + business thinking.</h3>
+    <div class="stat-row">
+     <div class="stat"><b>300+</b><span>companies researched</span></div>
+     <div class="stat"><b>500+</b><span>potential clients engaged</span></div>
+     <div class="stat"><b>5</b><span>states touched through social impact work</span></div>
+     <div class="stat"><b>3</b><span>core lenses: Product, Tech, Business</span></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Theme toggle
-      const themeToggle = document.getElementById('theme-toggle');
-      const themeKnob = document.getElementById('theme-knob');
-      const html = document.documentElement;
-      function setTheme(t) {
-        html.setAttribute('data-theme', t);
-        localStorage.setItem('theme', t);
-        if (t === 'dark') {
-          themeToggle.checked = true;
-          themeKnob.style.transform = 'translateX(32px)';
-        } else {
-          themeToggle.checked = false;
-          themeKnob.style.transform = 'translateX(0)';
-        }
-        if (window.particles) window.particles.reinit();
-      }
-      themeToggle.addEventListener('change', () => setTheme(themeToggle.checked ? 'dark' : 'light'));
-      setTheme(localStorage.getItem('theme') || 'light');
+<section class="about reveal-element" id="about">
+ <div class="container">
+  <div class="section-head"><div><div class="section-kicker">01 / About</div><h2 class="section-title">More than a job title.</h2></div><p class="section-desc">I’m building toward product roles, but my path has deliberately crossed technology, research, strategy and social impact.</p></div>
+  <div class="about-grid">
+   <div><p>I'm a <strong>Computer Science & Systems Engineering graduate from KIIT</strong> with experience spanning software testing, market research, business development, product thinking and community projects.</p>
+   <p>I enjoy the messy part of product: understanding the user, framing the problem, validating assumptions, working with different stakeholders and figuring out what should actually be built.</p></div>
+   <div><p>Outside formal roles, I've worked on product cases around <strong>Zomato, RuPay, EVs and consumer brands</strong>, and explored ideas such as artisan marketplaces, soap upcycling and sustainable home-care products.</p>
+   <p>My current focus: becoming a strong <strong>early-career PM/APM</strong> who can connect user needs, business outcomes and technical execution.</p></div>
+  </div>
+  <div class="chips"><span class="chip">Product Management</span><span class="chip">Market Research</span><span class="chip">GTM Strategy</span><span class="chip">Business Development</span><span class="chip">Data & Analytics</span><span class="chip">Technology</span><span class="chip">Social Impact</span></div>
+ </div>
+</section>
 
-      // Skills tabs
-      const tabs = document.querySelectorAll('.tab-btn');
-      const contents = document.querySelectorAll('.tab-content');
-      tabs.forEach(btn => {
-        btn.addEventListener('click', () => {
-          tabs.forEach(b => {
-            b.classList.remove('active');
-            b.style.background = '';
-            b.style.color = '';
-          });
-          btn.classList.add('active');
-          btn.style.background = 'var(--primary-gradient)';
-          btn.style.color = '#fff';
-          contents.forEach(c => {
-            c.id === btn.dataset.tab + '-content'
-              ? c.classList.remove('hidden')
-              : c.classList.add('hidden');
-          });
+<section id="impact" class="impact reveal-element">
+ <div class="container">
+  <div class="section-head"><div><div class="section-kicker">02 / Impact</div><h2 class="section-title">A few numbers.</h2></div></div>
+  <div class="impact-grid">
+   <div class="impact-item"><b>300+</b><span>companies profiled through market research</span></div>
+   <div class="impact-item"><b>500+</b><span>prospective clients engaged across investment firms</span></div>
+   <div class="impact-item"><b>5</b><span>states covered through community development work</span></div>
+   <div class="impact-item"><b>50+</b><span>artisans explored for Heritage Haven research</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="skills" class="reveal-element">
+ <div class="container">
+  <div class="section-head"><div><div class="section-kicker">03 / Toolkit</div><h2 class="section-title">How I work.</h2></div><p class="section-desc">A hybrid toolkit built from engineering, research and business-facing experiences.</p></div>
+  <div class="skills-grid">
+   <div class="skill-card"><div class="icon"><i class="fas fa-cubes"></i></div><h3>Product & Strategy</h3><p>From problem framing to prioritisation and GTM thinking.</p><ul class="skill-list"><li>Product discovery & problem framing</li><li>Roadmaps & prioritisation</li><li>GTM & launch planning</li><li>Business models & revenue thinking</li><li>Agile / sprint planning</li></ul></div>
+   <div class="skill-card"><div class="icon"><i class="fas fa-chart-line"></i></div><h3>Research & Analytics</h3><p>Turning scattered information into decisions.</p><ul class="skill-list"><li>Market & competitor research</li><li>Python, SQL & Excel</li><li>Data cleaning & analysis</li><li>Boolean research & lead enrichment</li><li>Consumer / user insight synthesis</li></ul></div>
+   <div class="skill-card"><div class="icon"><i class="fas fa-code"></i></div><h3>Technology & Execution</h3><p>Enough technical context to collaborate closely with engineering.</p><ul class="skill-list"><li>Computer Science fundamentals</li><li>Software testing & SDLC</li><li>Cypress, Jira & Postman</li><li>PostgreSQL / DBeaver</li><li>APIs, debugging & integration testing</li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section class="impact reveal-element">
+ <div class="container">
+  <div class="section-head"><div><div class="section-kicker">04 / Experience</div><h2 class="section-title">Work & impact journey.</h2></div></div>
+  <div class="timeline" id="journey">
+   <div class="timeline-item right"><div class="timeline-content"><span class="timeline-date">Jun 2025 – Aug 2025</span><h3>Research & Business Development Intern · Insight Alpha</h3><ul><li>Tracked market trends and company developments across sectors.</li><li>Identified and profiled 300+ companies and engaged 500+ potential clients across PE, hedge funds, investment managers and family offices.</li><li>Used AI-assisted scraping, enrichment and personalised outreach workflows.</li><li>Contributed research to the Wealth & Asset Management Academy and Hurun family-office mapping.</li></ul></div></div>
+   <div class="timeline-item left"><div class="timeline-content"><span class="timeline-date">Jan 2024 – Jun 2024</span><h3>Community Development Intern · Growth Foundation of India</h3><ul><li>Worked across education, empowerment, environment and health initiatives.</li><li>Supported project management, fundraising, outreach and research across five states.</li><li>Contributed to non-formal education and women-empowerment initiatives.</li></ul></div></div>
+   <div class="timeline-item right"><div class="timeline-content"><span class="timeline-date">2024 · Summer Internship</span><h3>IT / Networking Intern · ONGC Videsh Ltd.</h3><ul><li>Learned network monitoring, lease-line traffic monitoring and down-link identification.</li><li>Worked with ManageEngine OpManager, Active Directory and help-desk workflows.</li><li>Gained exposure to SAP and ABAP fundamentals.</li></ul></div></div>
+   <div class="timeline-item left"><div class="timeline-content"><span class="timeline-date">2023 – 2025</span><h3>Core Member · Enactus KISS–KIIT</h3><ul><li>Contributed to social ventures, ideation, research, competitions and events.</li><li>Worked on sustainability-led business ideas, presentations and sponsorship coordination.</li><li>Built hands-on experience connecting impact problems with viable business models.</li></ul></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="projects" class="reveal-element">
+ <div class="container">
+  <div class="section-head"><div><div class="section-kicker">05 / Selected work</div><h2 class="section-title">Projects I think with.</h2></div><p class="section-desc">A mix of product cases, startup concepts and real-world problem solving.</p></div>
+  <div class="project-grid">
+   <article class="project featured"><span class="project-tag">PRODUCT CASE · PMx</span><h3>Making Guwahati Street Food discoverable on Zomato</h3><p>Proposed a dedicated street-food discovery layer combining vendor onboarding, hygiene certifications, vendor training, eco-friendly packaging and a zero-commission onboarding period. The goal was to reduce the discovery and trust gap between consumers and local vendors.</p><div class="project-meta"><span>Discovery</span><span>Marketplace</span><span>GTM</span><span>Stakeholders</span></div></article>
+   <article class="project"><span class="project-tag">STARTUP CONCEPT</span><h3>Heritage Haven</h3><p>A marketplace concept connecting Odisha artisans with customers and corporate gifting buyers. Research included artisan discovery, product positioning and corporate hamper opportunities.</p><div class="project-meta"><span>Marketplace</span><span>Research</span><span>GTM</span></div></article>
+   <article class="project"><span class="project-tag">SOCIAL INNOVATION</span><h3>Sanraksha — Soap Upcycling</h3><p>Explored a circular model for collecting partially-used hotel soaps, processing them into reusable bars and creating a viable cost structure for the first 1,000 units.</p><div class="project-meta"><span>Circular economy</span><span>Unit economics</span><span>Impact</span></div></article>
+   <article class="project"><span class="project-tag">R&D CONCEPT</span><h3>Organic Floor Cleaner</h3><p>Experimented with fermented orange peels, jaggery and yeast, including pH testing and microbial-efficacy considerations to explore a lower-chemical home-care alternative.</p><div class="project-meta"><span>R&D</span><span>Experimentation</span><span>Sustainability</span></div></article>
+   <article class="project"><span class="project-tag">PRODUCT STRATEGY</span><h3>RuPay Premium Card Strategy</h3><p>Worked on positioning and value propositions to make RuPay more compelling for premium customers, with a focus on segment needs and differentiation.</p><div class="project-meta"><span>Segmentation</span><span>Positioning</span><span>Strategy</span></div><div class="case-links"><button class="btn btn-outline" onclick="openPDFModal('rupay-premium-strategy.pdf')">View case study</button></div></article>
+   <article class="project"><span class="project-tag">MARKET ENTRY</span><h3>EV Market Entry — BCN Brainwars</h3><p>Analysed a hypothetical Indian EV entry and local manufacturing strategy for Nexus Motors' Voltaris Z, connecting market opportunity with competitive and operational considerations.</p><div class="project-meta"><span>Market entry</span><span>EV</span><span>Strategy</span></div><div class="case-links"><button class="btn btn-outline" onclick="openPDFModal('BCN.pdf')">View case study</button></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="case-studies" class="about reveal-element">
+ <div class="container">
+  <div class="section-head"><div><div class="section-kicker">06 / Deep dives</div><h2 class="section-title">Case studies.</h2></div><p class="section-desc">Selected structured problem-solving work from my earlier portfolio.</p></div>
+  <div class="project-grid">
+   <article class="project"><span class="project-tag">HEALTH · AI</span><h3>Smart Health Integration</h3><p>Concept for a unified AI-driven personal health tracking experience.</p><button class="btn btn-outline" onclick="openPDFModal('smart-health-integration.pdf')">View case study</button></article>
+   <article class="project"><span class="project-tag">CONSUMER · HYDRATION</span><h3>Blitz Hydration Strategy</h3><p>Differentiation strategy against established hydration brands.</p><button class="btn btn-outline" onclick="openPDFModal('team-mr-x.pdf')">View case study</button></article>
+   <article class="project"><span class="project-tag">FOODTECH · MARKETPLACE</span><h3>Zomato Street Food Integration</h3><p>Product and GTM approach for bringing local street vendors into a digital discovery ecosystem.</p><button class="btn btn-outline" onclick="openPDFModal('zomato-street-food.pdf')">View case study</button></article>
+  </div>
+ </div>
+</section>
+
+<section class="reveal-element" id="credentials">
+ <div class="container">
+  <div class="section-head"><div><div class="section-kicker">07 / Recognition</div><h2 class="section-title">Credentials & recognition.</h2></div></div>
+  <div class="cert-grid">
+   <article class="cert"><div class="icon"><i class="fas fa-trophy"></i></div><h3>Enactus India Winner</h3><p>Early Stage Category · 2024</p><button class="btn btn-outline" onclick="openPDFModal('Enactus India National Exposition 2024.pdf')">View certificate</button></article>
+   <article class="cert"><div class="icon"><i class="fas fa-award"></i></div><h3>E-Conjecture Finalist</h3><p>IIM Indore</p><button class="btn btn-outline" onclick="openPDFModal('Vinayak Pathak_E -conjecture.pdf')">View certificate</button></article>
+   <article class="cert"><div class="icon"><i class="fas fa-chess"></i></div><h3>Strategy & Game Theory</h3><p>IIM Ahmedabad · Coursera</p><button class="btn btn-outline" onclick="openPDFModal('Coursera GKGRPO2ZQM0D.pdf')">View certificate</button></article>
+  </div>
+ </div>
+</section>
+
+<section class="contact reveal-element" id="contact">
+ <div class="container">
+  <div class="section-head"><div><div class="section-kicker">08 / Contact</div><h2 class="section-title">Let's build something.</h2></div><p class="section-desc">Open to early-career opportunities across product, strategy, research and business-facing technology roles.</p></div>
+  <div class="contact-grid">
+   <div class="contact-card"><h3>Reach me</h3><div class="contact-row"><i class="fas fa-envelope"></i><a href="mailto:pathakvinayak31@gmail.com">pathakvinayak31@gmail.com</a></div><div class="contact-row"><i class="fas fa-map-marker-alt"></i><span>New Delhi, India</span></div><div class="socials"><a href="https://linkedin.com/in/vinayakpathak" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="https://github.com/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></div></div>
+   <form class="contact-card" action="mailto:pathakvinayak31@gmail.com" method="post" enctype="text/plain"><div class="form-group"><label>Name</label><input type="text" name="Name" required placeholder="Your name"></div><div class="form-group"><label>Email</label><input type="email" name="Email" required placeholder="you@example.com"></div><div class="form-group"><label>Message</label><textarea name="Message" rows="4" required placeholder="Tell me what you're working on..."></textarea></div><button type="submit" class="btn btn-primary">Send message <i class="fas fa-arrow-right"></i></button></form>
+  </div>
+ </div>
+</section>
+</main>
+<footer class="footer"><div class="container"><p>© 2026 Vinayak Pathak · Built around curiosity, products & impact.</p></div></footer>
+
+<div class="modal-overlay" id="pdfModal"><div class="modal-container"><div class="modal-header"><h3 id="modalTitle">Document Viewer</h3><button class="modal-close" onclick="closePDFModal()"><i class="fas fa-times"></i></button></div><div class="modal-body"><iframe id="pdfFrame" src="" frameborder="0"></iframe></div></div></div>
+
+<script>
+        // Enhanced JavaScript with All Features
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeTheme();
+            initializeTabs();
+            initializeModal();
+            initializeScrollAnimations();
+                        initializeLoadingScreen();
+            initializeHeaderEffects();
         });
-      });
 
-      // Scroll reveal
-      const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) e.target.classList.add('active');
+        // Loading Screen
+        function initializeLoadingScreen() {
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    loadingOverlay.classList.add('hidden');
+                    setTimeout(() => {
+                        loadingOverlay.style.display = 'none';
+                    }, 500);
+                }, 1000);
+            });
+        }
+
+        // Theme Toggle
+        function initializeTheme() {
+            const themeToggle = document.getElementById('theme-checkbox');
+            const html = document.documentElement;
+            
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            html.setAttribute('data-theme', savedTheme);
+            
+            if (savedTheme === 'dark') {
+                themeToggle.checked = true;
+            }
+            
+            themeToggle.addEventListener('change', function() {
+                const newTheme = this.checked ? 'dark' : 'light';
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                // Recreate particles with new theme
+                createParticles();
+            });
+        }
+
+        // Enhanced Tab Functionality
+        function initializeTabs() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+                    
+                    // Add loading effect
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                    
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    this.classList.add('active');
+                    const targetContent = document.getElementById(targetTab);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+                });
+            });
+        }
+
+        // Enhanced Modal Functionality
+        function initializeModal() {
+            const modal = document.getElementById('pdfModal');
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closePDFModal();
+                }
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    closePDFModal();
+                }
+            });
+        }
+
+        function openPDFModal(pdfPath) {
+            const modal = document.getElementById('pdfModal');
+            const iframe = document.getElementById('pdfFrame');
+            const title = document.getElementById('modalTitle');
+            
+            iframe.src = pdfPath;
+            title.textContent = getDocumentTitle(pdfPath);
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Add entrance animation
+            modal.style.animation = 'fadeIn 0.3s ease-out';
+        }
+
+        function closePDFModal() {
+            const modal = document.getElementById('pdfModal');
+            const iframe = document.getElementById('pdfFrame');
+            
+            modal.style.animation = 'fadeOut 0.3s ease-out';
+            setTimeout(() => {
+                modal.style.display = 'none';
+                iframe.src = '';
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        function getDocumentTitle(filename) {
+            const nameMap = {
+                'vinayak-resume.pdf': 'Resume - Vinayak Pathak',
+                'smart-health-integration.pdf': 'Case Study - Smart Health Integration',
+                'BCN.pdf': 'Case Study - BCN Brainwars',
+                'rupay-premium-strategy.pdf': 'Case Study - RuPay Premium Strategy',
+                'zomato-street-food.pdf': 'Case Study - Zomato Street Food',
+                'team-mr-x.pdf': 'Case Study - Blitz Hydration Strategy',
+                'sdoh-health-forecasting.pdf': 'Research - SDOH Health Forecasting',
+                'Coursera GKGRPO2ZQM0D.pdf': 'Certificate - Strategy & Game Theory',
+                'Vinayak Pathak_E -conjecture.pdf': 'Certificate - E-Conjecture Finalist',
+                'Enactus India National Exposition 2024.pdf': 'Certificate - Enactus India Winner',
+                'Business Analytics Certificate.pdf': 'Certificate - Business Analytics'
+            };
+            return nameMap[filename] || 'Document Viewer';
+        }
+
+        // Advanced Scroll Animations with Intersection Observer
+        function initializeScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        
+                        // Add staggered animation for grid items
+                        if (entry.target.classList.contains('grid')) {
+                            const cards = entry.target.querySelectorAll('.card');
+                            cards.forEach((card, index) => {
+                                setTimeout(() => {
+                                    card.classList.add('revealed');
+                                }, index * 100);
+                            });
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.reveal-element, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Custom Cursor
+        function initializeCustomCursor() {
+            const cursor = document.getElementById('cursor');
+            const cursorFollower = document.getElementById('cursorFollower');
+            
+            if (window.innerWidth > 768) {
+                let mouseX = 0, mouseY = 0;
+                let followerX = 0, followerY = 0;
+                
+                document.addEventListener('mousemove', (e) => {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                    
+                    cursor.style.left = mouseX + 'px';
+                    cursor.style.top = mouseY + 'px';
+                });
+                
+                // Smooth follower animation
+                function animateFollower() {
+                    followerX += (mouseX - followerX) * 0.1;
+                    followerY += (mouseY - followerY) * 0.1;
+                    
+                    cursorFollower.style.left = followerX + 'px';
+                    cursorFollower.style.top = followerY + 'px';
+                    
+                    requestAnimationFrame(animateFollower);
+                }
+                animateFollower();
+                
+                // Cursor interactions
+                document.querySelectorAll('a, button, .btn').forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        cursor.classList.add('expand');
+                    });
+                    el.addEventListener('mouseleave', () => {
+                        cursor.classList.remove('expand');
+                    });
+                });
+            }
+        }
+
+        // Magnetic Effects
+        function initializeMagneticEffects() {
+            if (window.innerWidth > 768) {
+                document.querySelectorAll('.magnetic-btn').forEach(btn => {
+                    btn.addEventListener('mousemove', (e) => {
+                        const rect = btn.getBoundingClientRect();
+                        const x = e.clientX - rect.left - rect.width / 2;
+                        const y = e.clientY - rect.top - rect.height / 2;
+                        
+                        btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+                    });
+                    
+                    btn.addEventListener('mouseleave', () => {
+                        btn.style.transform = '';
+                    });
+                });
+            }
+        }
+
+        // Floating Particles
+        function initializeParticles() {
+            createParticles();
+        }
+
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            particlesContainer.innerHTML = '';
+            
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Header Effects
+        function initializeHeaderEffects() {
+            const header = document.getElementById('header');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
         });
-      }, { threshold: 0.1 });
-      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-      // Header shadow
-      const header = document.getElementById('header');
-      window.addEventListener('scroll', () => {
-        header.classList.toggle('shadow-lg', window.scrollY > 50);
-        header.classList.toggle('bg-white/80', window.scrollY > 50);
-        header.classList.toggle('dark:bg-black/80', window.scrollY > 50);
-      });
-
-      // Particles
-      class ParticleAnimation {
-        constructor(id) {
-          this.canvas = document.getElementById(id);
-          this.ctx = this.canvas.getContext('2d');
-          window.addEventListener('resize', () => this.resize());
-          this.resize();
-        }
-        resize() {
-          this.canvas.width = window.innerWidth;
-          this.canvas.height = window.innerHeight;
-          this.init();
-        }
-        init() {
-          this.particles = [];
-          const col = html.getAttribute('data-theme') === 'dark'
-            ? 'rgba(168,85,247,0.6)'
-            : 'rgba(102,126,234,0.4)';
-          const count = (this.canvas.width * this.canvas.height) / 9000;
-          for (let i = 0; i < count; i++) {
-            const size = Math.random() * 2 + 1;
-            const x = Math.random() * (this.canvas.width - size * 2) + size;
-            const y = Math.random() * (this.canvas.height - size * 2) + size;
-            const dx = Math.random() * 0.4 - 0.2;
-            const dy = Math.random() * 0.4 - 0.2;
-            this.particles.push({ x, y, dx, dy, size, color: col });
-          }
-        }
-        reinit() { this.init(); }
-        animate() {
-          requestAnimationFrame(() => this.animate());
-          this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-          this.particles.forEach(p => {
-            p.x += p.dx; p.y += p.dy;
-            if (p.x + p.size > this.canvas.width || p.x - p.size < 0) p.dx = -p.dx;
-            if (p.y + p.size > this.canvas.height || p.y - p.size < 0) p.dy = -p.dy;
-            this.ctx.beginPath();
-            this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-            this.ctx.fillStyle = p.color;
-            this.ctx.fill();
-          });
-        }
-      }
-      window.particles = new ParticleAnimation('particle-canvas');
-      window.particles.animate();
-    });
-
-    // PDF modal
-    function openPDFModal(path, title) {
-      document.getElementById('pdfFrame').src = path;
-      document.getElementById('modalTitle').textContent = title;
-      const m = document.getElementById('pdfModal');
-      m.classList.remove('hidden'); m.classList.add('flex');
-      document.body.style.overflow = 'hidden';
-    }
-    function closePDFModal() {
-      document.getElementById('pdfFrame').src = '';
-      const m = document.getElementById('pdfModal');
-      m.classList.add('hidden'); m.classList.remove('flex');
-      document.body.style.overflow = 'auto';
-    }
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && !document.getElementById('pdfModal').classList.contains('hidden')) {
-        closePDFModal();
-      }
-    });
-  </script>
-</body>
-</html>
+        // Add CSS fade-out animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeOut {
+                from { opacity: 1; }
+                to { opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    
+</script>
+</body></html>
