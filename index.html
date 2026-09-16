@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vinayak Pathak | Product • Strategy • Technology</title>
+<title>Vinayak Pathak | Product • UX • Strategy • Technology</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -57,6 +57,21 @@ section{padding:100px 0;position:relative}.section-head{display:flex;justify-con
 .reveal-element{opacity:0;transform:translateY(24px);transition:.7s}.revealed{opacity:1;transform:none}
 @media(max-width:800px){.nav{display:none}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero-card{max-width:420px;margin:auto}.skills-grid,.cert-grid{grid-template-columns:1fr}.impact-grid{grid-template-columns:1fr 1fr}.project-grid{grid-template-columns:1fr}.project.featured{grid-column:auto}.timeline:before{left:7px}.timeline-item,.timeline-item.right{width:100%;margin-left:0;padding-left:2rem;text-align:left}.timeline-item.left:after,.timeline-item.right:after{left:2px;right:auto}.section-head{display:block}.section-desc{margin-top:.8rem}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal-element{opacity:1;transform:none}}
+
+.case-showcase{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.case-mini{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:1.35rem;display:flex;gap:1rem;align-items:flex-start;transition:.3s}
+.case-mini:hover{transform:translateY(-5px);border-color:rgba(168,85,247,.5);box-shadow:var(--shadow)}
+.case-number{font-size:.72rem;font-weight:700;color:var(--primary);padding-top:.2rem}
+.case-mini h3{font-size:1rem;margin:.2rem 0 .6rem}
+.case-mini p{font-size:.75rem;color:var(--muted)}
+.case-modal-body{padding:1.5rem;overflow:auto;height:calc(100% - 55px)}
+.case-modal-body h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--primary);margin:1.3rem 0 .5rem}
+.case-modal-body p,.case-modal-body li{font-size:.82rem;color:var(--muted)}
+.case-modal-body ul{padding-left:1.2rem}
+.case-stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin:1rem 0}
+.case-stat{border:1px solid var(--border);border-radius:12px;padding:.9rem;background:var(--surface)}
+.case-stat b{display:block;font-size:1.15rem}.case-stat span{font-size:.65rem;color:var(--muted)}
+@media(max-width:800px){.case-showcase{grid-template-columns:1fr}.case-stat-grid{grid-template-columns:1fr 1fr}}
 </style>
 
 </head><body>
@@ -77,9 +92,9 @@ section{padding:100px 0;position:relative}.section-head{display:flex;justify-con
 <section class="hero">
  <div class="container hero-grid">
   <div>
-   <div class="eyebrow"><span class="dot"></span> Product • Strategy • Technology</div>
+   <div class="eyebrow"><span class="dot"></span> Product • UX • Strategy • Technology</div>
    <h1>Hi, I'm <span class="gradient">Vinayak.</span></h1>
-   <p class="hero-copy">A <strong>KIIT B.Tech graduate</strong> who likes turning ambiguous problems into clear products, strategies and experiments — with a foundation across technology, market research and business.</p>
+   <p class="hero-copy">A <strong>Computer Science Engineering graduate from KIIT</strong> with hands-on experience across product thinking, UX research, technology and market strategy — turning ambiguous problems into clear product decisions and user experiences.</p>
    <div class="hero-actions">
     <button class="btn btn-primary" onclick="openPDFModal('vinayak-resume.pdf')"><i class="fas fa-file-alt"></i> View Resume</button>
     <a href="#projects" class="btn btn-secondary"><i class="fas fa-arrow-down"></i> Explore My Work</a>
@@ -89,11 +104,13 @@ section{padding:100px 0;position:relative}.section-head{display:flex;justify-con
    <div class="hero-card-inner">
     <span class="mini-label">What I bring</span>
     <h3 style="margin-top:.5rem;font-size:1.35rem">Builder mindset + business thinking.</h3>
+    <p style="font-size:.75rem;color:var(--muted);margin-top:.6rem">Product · UX · Strategy · AI · Technology</p>
     <div class="stat-row">
-     <div class="stat"><b>300+</b><span>companies researched</span></div>
-     <div class="stat"><b>500+</b><span>potential clients engaged</span></div>
-     <div class="stat"><b>5</b><span>states touched through social impact work</span></div>
-     <div class="stat"><b>3</b><span>core lenses: Product, Tech, Business</span></div>
+      <div class="stat"><b>50+</b><span>defects identified & retested</span></div>
+      <div class="stat"><b>4</b><span>DBSS modules tested</span></div>
+      <div class="stat"><b>300+</b><span>companies profiled</span></div>
+      <div class="stat"><b>2,585</b><span>ZIP codes modelled</span></div>
+     </div>
     </div>
    </div>
   </div>
@@ -104,74 +121,77 @@ section{padding:100px 0;position:relative}.section-head{display:flex;justify-con
  <div class="container">
   <div class="section-head"><div><div class="section-kicker">01 / About</div><h2 class="section-title">More than a job title.</h2></div><p class="section-desc">I’m building toward product roles, but my path has deliberately crossed technology, research, strategy and social impact.</p></div>
   <div class="about-grid">
-   <div><p>I'm a <strong>Computer Science & Systems Engineering graduate from KIIT</strong> with experience spanning software testing, market research, business development, product thinking and community projects.</p>
-   <p>I enjoy the messy part of product: understanding the user, framing the problem, validating assumptions, working with different stakeholders and figuring out what should actually be built.</p></div>
-   <div><p>Outside formal roles, I've worked on product cases around <strong>Zomato, RuPay, EVs and consumer brands</strong>, and explored ideas such as artisan marketplaces, soap upcycling and sustainable home-care products.</p>
-   <p>My current focus: becoming a strong <strong>early-career PM/APM</strong> who can connect user needs, business outcomes and technical execution.</p></div>
+    <div><p>I'm a <strong>Computer Science Engineering graduate from KIIT</strong> with experience spanning software engineering, product management, UX research, market research and strategy.</p>
+    <p>I enjoy working from the problem outward: understanding users, framing the opportunity, validating assumptions and turning insights into focused product solutions.</p></div>
+    <div><p>My recent product work includes <strong>Zepto, Nykaa and Uber</strong>, while my professional experience includes testing telecom platforms at Amdocs and building structured market intelligence at Insight Alpha.</p>
+    <p>I'm particularly interested in <strong>Product / APM roles</strong> where product judgment, data, UX and technical execution come together.</p></div>
+   </div>
+   <div class="chips"><span class="chip">Product Discovery</span><span class="chip">Product Strategy</span><span class="chip">User Research</span><span class="chip">JTBD</span><span class="chip">Problem Framing</span><span class="chip">PRDs</span><span class="chip">RICE</span><span class="chip">UX & AI</span><span class="chip">Python & SQL</span><span class="chip">Agile</span></div>
   </div>
-  <div class="chips"><span class="chip">Product Management</span><span class="chip">Market Research</span><span class="chip">GTM Strategy</span><span class="chip">Business Development</span><span class="chip">Data & Analytics</span><span class="chip">Technology</span><span class="chip">Social Impact</span></div>
- </div>
-</section>
+ </section>
 
 <section id="impact" class="impact reveal-element">
- <div class="container">
-  <div class="section-head"><div><div class="section-kicker">02 / Impact</div><h2 class="section-title">A few numbers.</h2></div></div>
-  <div class="impact-grid">
-   <div class="impact-item"><b>300+</b><span>companies profiled through market research</span></div>
-   <div class="impact-item"><b>500+</b><span>prospective clients engaged across investment firms</span></div>
-   <div class="impact-item"><b>5</b><span>states covered through community development work</span></div>
-   <div class="impact-item"><b>50+</b><span>artisans explored for Heritage Haven research</span></div>
+  <div class="container">
+   <div class="section-head"><div><div class="section-kicker">02 / Impact</div><h2 class="section-title">A few numbers.</h2></div></div>
+   <div class="impact-grid">
+    <div class="impact-item"><b>50+</b><span>defects identified, documented and retested at Amdocs</span></div>
+    <div class="impact-item"><b>95%+</b><span>first-release stability supported at Amdocs</span></div>
+    <div class="impact-item"><b>300+</b><span>companies profiled through market intelligence research</span></div>
+    <div class="impact-item"><b>40%</b><span>research and lead-generation throughput improvement</span></div>
+   </div>
   </div>
- </div>
-</section>
+ </section>
 
 <section id="skills" class="reveal-element">
  <div class="container">
   <div class="section-head"><div><div class="section-kicker">03 / Toolkit</div><h2 class="section-title">How I work.</h2></div><p class="section-desc">A hybrid toolkit built from engineering, research and business-facing experiences.</p></div>
   <div class="skills-grid">
-   <div class="skill-card"><div class="icon"><i class="fas fa-cubes"></i></div><h3>Product & Strategy</h3><p>From problem framing to prioritisation and GTM thinking.</p><ul class="skill-list"><li>Product discovery & problem framing</li><li>Roadmaps & prioritisation</li><li>GTM & launch planning</li><li>Business models & revenue thinking</li><li>Agile / sprint planning</li></ul></div>
-   <div class="skill-card"><div class="icon"><i class="fas fa-chart-line"></i></div><h3>Research & Analytics</h3><p>Turning scattered information into decisions.</p><ul class="skill-list"><li>Market & competitor research</li><li>Python, SQL & Excel</li><li>Data cleaning & analysis</li><li>Boolean research & lead enrichment</li><li>Consumer / user insight synthesis</li></ul></div>
-   <div class="skill-card"><div class="icon"><i class="fas fa-code"></i></div><h3>Technology & Execution</h3><p>Enough technical context to collaborate closely with engineering.</p><ul class="skill-list"><li>Computer Science fundamentals</li><li>Software testing & SDLC</li><li>Cypress, Jira & Postman</li><li>PostgreSQL / DBeaver</li><li>APIs, debugging & integration testing</li></ul></div>
+    <div class="skill-card"><div class="icon"><i class="fas fa-cubes"></i></div><h3>Product</h3><p>Structured product thinking from discovery through prioritisation and execution.</p><ul class="skill-list"><li>Product Discovery & Strategy</li><li>JTBD & Problem Framing</li><li>PRDs & User Stories</li><li>RICE & Roadmapping</li><li>Agile</li></ul></div>
+    <div class="skill-card"><div class="icon"><i class="fas fa-compass-drafting"></i></div><h3>UX & AI</h3><p>Research-led experiences supported by modern AI product thinking.</p><ul class="skill-list"><li>User Research & User Journeys</li><li>Wireframing & Prototyping</li><li>Figma</li><li>AI-assisted Research</li><li>AI Product Thinking</li></ul></div>
+    <div class="skill-card"><div class="icon"><i class="fas fa-code"></i></div><h3>Data & Technology</h3><p>Technical fluency to analyse data and collaborate with engineering teams.</p><ul class="skill-list"><li>Python & SQL</li><li>PostgreSQL & DBeaver</li><li>Jira, Postman & Cypress</li><li>Git & APIs</li><li>Excel & Data Analysis</li></ul></div>
+   </div>
   </div>
- </div>
-</section>
+ </section>
 
 <section class="impact reveal-element">
- <div class="container">
-  <div class="section-head"><div><div class="section-kicker">04 / Experience</div><h2 class="section-title">Work & impact journey.</h2></div></div>
-  <div class="timeline" id="journey">
-   <div class="timeline-item right"><div class="timeline-content"><span class="timeline-date">Jun 2025 – Aug 2025</span><h3>Research & Business Development Intern · Insight Alpha</h3><ul><li>Tracked market trends and company developments across sectors.</li><li>Identified and profiled 300+ companies and engaged 500+ potential clients across PE, hedge funds, investment managers and family offices.</li><li>Used AI-assisted scraping, enrichment and personalised outreach workflows.</li><li>Contributed research to the Wealth & Asset Management Academy and Hurun family-office mapping.</li></ul></div></div>
-   <div class="timeline-item left"><div class="timeline-content"><span class="timeline-date">Jan 2024 – Jun 2024</span><h3>Community Development Intern · Growth Foundation of India</h3><ul><li>Worked across education, empowerment, environment and health initiatives.</li><li>Supported project management, fundraising, outreach and research across five states.</li><li>Contributed to non-formal education and women-empowerment initiatives.</li></ul></div></div>
-   <div class="timeline-item right"><div class="timeline-content"><span class="timeline-date">2024 · Summer Internship</span><h3>IT / Networking Intern · ONGC Videsh Ltd.</h3><ul><li>Learned network monitoring, lease-line traffic monitoring and down-link identification.</li><li>Worked with ManageEngine OpManager, Active Directory and help-desk workflows.</li><li>Gained exposure to SAP and ABAP fundamentals.</li></ul></div></div>
-   <div class="timeline-item left"><div class="timeline-content"><span class="timeline-date">2023 – 2025</span><h3>Core Member · Enactus KISS–KIIT</h3><ul><li>Contributed to social ventures, ideation, research, competitions and events.</li><li>Worked on sustainability-led business ideas, presentations and sponsorship coordination.</li><li>Built hands-on experience connecting impact problems with viable business models.</li></ul></div></div>
+  <div class="container">
+   <div class="section-head"><div><div class="section-kicker">04 / Experience</div><h2 class="section-title">Work & impact journey.</h2></div><p class="section-desc">A path across software engineering, product learning, market intelligence and social-impact work.</p></div>
+   <div class="timeline" id="journey">
+    <div class="timeline-item right"><div class="timeline-content"><span class="timeline-date">Jan 2026 – Jun 2026</span><h3>Software Engineering Intern · Amdocs</h3><ul><li>Validated sanity, integration and production test suites across <strong>4 DBSS platform modules</strong> serving telecom systems with millions of subscribers.</li><li>Identified, documented and retested <strong>50+ defects</strong> across the release lifecycle.</li><li>Collaborated with development and infrastructure teams, contributing to <strong>95%+ first-release stability</strong>.</li><li>Verified end-to-end workflows across Selfcare, SRM and CareUI using Postman and PostgreSQL, contributing to ~20% lower post-deployment defect leakage.</li></ul></div></div>
+    <div class="timeline-item left"><div class="timeline-content"><span class="timeline-date">2026</span><h3>AI-First Product Management · Airtribe</h3><ul><li>Focused on product discovery, user research, problem framing, JTBD, PRDs, user stories and prioritisation.</li><li>Applied product strategy, UX, AI product thinking and Agile practices through hands-on case work.</li></ul></div></div>
+    <div class="timeline-item right"><div class="timeline-content"><span class="timeline-date">Jun 2025 – Aug 2025</span><h3>Market Research & Strategy Intern · Insight Alpha</h3><ul><li>Profiled <strong>300+ companies</strong> across PE, hedge funds and family offices, supporting 15+ client engagements.</li><li>Automated research and lead-generation workflows using AI tools, LinkedIn Sales Navigator and data-enrichment APIs.</li><li>Improved research and lead-generation throughput by approximately <strong>40%</strong>.</li></ul></div></div>
+    <div class="timeline-item left"><div class="timeline-content"><span class="timeline-date">May 2024 – Jun 2024</span><h3>IT Intern · ONGC Videsh Ltd.</h3><ul><li>Mapped SAP workflows across <strong>3 business units</strong> and documented business processes.</li><li>Supported requirements analysis for digital transformation initiatives.</li></ul></div></div>
+    <div class="timeline-item right"><div class="timeline-content"><span class="timeline-date">Jul 2023 – Oct 2023</span><h3>Research Intern · Growth Foundation of India</h3><ul><li>Conducted research, prepared funding proposals and collaborated with stakeholders on tribal health and education initiatives.</li></ul></div></div>
+    <div class="timeline-item left"><div class="timeline-content"><span class="timeline-date">2023 – 2024</span><h3>Enactus KISS–KIIT</h3><ul><li>Led GTM strategy for <strong>2 social projects</strong>.</li><li>Contributed to ideation, research, competitions, presentations and social-venture development.</li></ul></div></div>
+   </div>
   </div>
- </div>
-</section>
+ </section>
 
 <section id="projects" class="reveal-element">
  <div class="container">
-  <div class="section-head"><div><div class="section-kicker">05 / Selected work</div><h2 class="section-title">Projects I think with.</h2></div><p class="section-desc">A mix of product cases, startup concepts and real-world problem solving.</p></div>
+  <div class="section-head"><div><div class="section-kicker">05 / Selected work</div><h2 class="section-title">Projects I think with.</h2></div><p class="section-desc">Recent product cases supported by research, UX thinking, prioritisation and measurable outcomes.</p></div>
   <div class="project-grid">
-   <article class="project featured"><span class="project-tag">PRODUCT CASE · PMx</span><h3>Making Guwahati Street Food discoverable on Zomato</h3><p>Proposed a dedicated street-food discovery layer combining vendor onboarding, hygiene certifications, vendor training, eco-friendly packaging and a zero-commission onboarding period. The goal was to reduce the discovery and trust gap between consumers and local vendors.</p><div class="project-meta"><span>Discovery</span><span>Marketplace</span><span>GTM</span><span>Stakeholders</span></div></article>
-   <article class="project"><span class="project-tag">STARTUP CONCEPT</span><h3>Heritage Haven</h3><p>A marketplace concept connecting Odisha artisans with customers and corporate gifting buyers. Research included artisan discovery, product positioning and corporate hamper opportunities.</p><div class="project-meta"><span>Marketplace</span><span>Research</span><span>GTM</span></div></article>
-   <article class="project"><span class="project-tag">SOCIAL INNOVATION</span><h3>Sanraksha — Soap Upcycling</h3><p>Explored a circular model for collecting partially-used hotel soaps, processing them into reusable bars and creating a viable cost structure for the first 1,000 units.</p><div class="project-meta"><span>Circular economy</span><span>Unit economics</span><span>Impact</span></div></article>
-   <article class="project"><span class="project-tag">R&D CONCEPT</span><h3>Organic Floor Cleaner</h3><p>Experimented with fermented orange peels, jaggery and yeast, including pH testing and microbial-efficacy considerations to explore a lower-chemical home-care alternative.</p><div class="project-meta"><span>R&D</span><span>Experimentation</span><span>Sustainability</span></div></article>
-   <article class="project"><span class="project-tag">PRODUCT STRATEGY</span><h3>RuPay Premium Card Strategy</h3><p>Worked on positioning and value propositions to make RuPay more compelling for premium customers, with a focus on segment needs and differentiation.</p><div class="project-meta"><span>Segmentation</span><span>Positioning</span><span>Strategy</span></div><div class="case-links"><button class="btn btn-outline" onclick="openPDFModal('rupay-premium-strategy.pdf')">View case study</button></div></article>
-   <article class="project"><span class="project-tag">MARKET ENTRY</span><h3>EV Market Entry — BCN Brainwars</h3><p>Analysed a hypothetical Indian EV entry and local manufacturing strategy for Nexus Motors' Voltaris Z, connecting market opportunity with competitive and operational considerations.</p><div class="project-meta"><span>Market entry</span><span>EV</span><span>Strategy</span></div><div class="case-links"><button class="btn btn-outline" onclick="openPDFModal('BCN.pdf')">View case study</button></div></article>
+<article class="project featured"><span class="project-tag">RESEARCH · MACHINE LEARNING · IEEE</span><h3>SDOH-Based ZIP Code Area Health Forecasting</h3><p>Built predictive models across <strong>2,585 ZIP codes</strong> using Social Determinants of Health data. Compared machine-learning approaches and achieved an XGBoost test R² of <strong>0.992</strong>, while identifying factors associated with health outcomes.</p><div class="project-meta"><span>Python</span><span>XGBoost</span><span>scikit-learn</span><span>pandas</span><span>IEEE Co-author</span></div></article>
+        <article class="project featured"><span class="project-tag">PRODUCT CASE · QUICK COMMERCE</span><h3>Zepto — Growing AOV Without Adding Friction</h3><p>Research-led product strategy to increase basket size by understanding where users stop adding items. Segmented 67 respondents, identified urgency-led and comparison behaviours, then proposed Smart Complements, Usual Basket Reorder and a Zepto AI Assistant.</p><div class="project-meta"><span>67 respondents</span><span>Segmentation</span><span>RICE</span><span>Metrics</span></div><div class="case-links"><button class="btn btn-outline" onclick="openCaseStudy('zepto')">View case study</button></div></article>
+    <article class="project featured"><span class="project-tag">UX CASE STUDY · BEAUTY COMMERCE</span><h3>Nykaa — From “I Need a Gift” to Purchase Confidence</h3><p>Mapped a Rakshabandhan gifting journey on Nykaa, from login and discovery through product evaluation and checkout. Identified decision overload, slow category scanning and under-personalised cross-sell opportunities.</p><div class="project-meta"><span>User journey</span><span>UX</span><span>Discovery</span><span>Social proof</span></div><div class="case-links"><button class="btn btn-outline" onclick="openCaseStudy('nykaa')">View case study</button></div></article>
+    <article class="project featured"><span class="project-tag">PRODUCT RESEARCH · MOBILITY</span><h3>Uber — The Ride Is Booked, The Pickup Isn’t</h3><p>Explored the gap between a precise GPS pin and a usable real-world pickup point. Interviews across Delhi, Indore, Dehradun, Ghaziabad and Bangalore surfaced landmark-based coordination, walking and pickup cancellations as recurring friction points.</p><div class="project-meta"><span>User research</span><span>Mobility</span><span>Pickup UX</span><span>Experiment design</span></div><div class="case-links"><button class="btn btn-outline" onclick="openCaseStudy('uber')">View case study</button></div></article>
+    <article class="project"><span class="project-tag">CONSUMER STRATEGY</span><h3>BLITZ — Hydration as a Lifestyle</h3><p>Developed positioning, distribution and marketing strategy for a natural, sugar-free sports hydration concept, including influencer-led engagement, UGC, meme marketing, AR gamification, retail expansion and event sponsorships.</p><div class="project-meta"><span>Positioning</span><span>GTM</span><span>Brand strategy</span></div><div class="case-links"><button class="btn btn-outline" onclick="openCaseStudy('blitz')">View case study</button></div></article>
+    <article class="project"><span class="project-tag">SOCIAL INNOVATION</span><h3>Sanraksha — Soap Upcycling</h3><p>Explored a circular model for collecting partially-used hotel soaps, processing them into reusable bars and creating a viable cost structure for the first 1,000 units.</p><div class="project-meta"><span>Circular economy</span><span>Unit economics</span><span>Impact</span></div></article>
+    <article class="project"><span class="project-tag">MARKETPLACE · GTM</span><h3>Heritage Haven</h3><p>A marketplace concept connecting Odisha artisans with customers and corporate gifting buyers, with research into artisan discovery, product positioning and corporate hamper opportunities.</p><div class="project-meta"><span>Marketplace</span><span>Research</span><span>GTM</span></div></article>
+   </div>
   </div>
- </div>
-</section>
+ </section>
 
 <section id="case-studies" class="about reveal-element">
- <div class="container">
-  <div class="section-head"><div><div class="section-kicker">06 / Deep dives</div><h2 class="section-title">Case studies.</h2></div><p class="section-desc">Selected structured problem-solving work from my earlier portfolio.</p></div>
-  <div class="project-grid">
-   <article class="project"><span class="project-tag">HEALTH · AI</span><h3>Smart Health Integration</h3><p>Concept for a unified AI-driven personal health tracking experience.</p><button class="btn btn-outline" onclick="openPDFModal('smart-health-integration.pdf')">View case study</button></article>
-   <article class="project"><span class="project-tag">CONSUMER · HYDRATION</span><h3>Blitz Hydration Strategy</h3><p>Differentiation strategy against established hydration brands.</p><button class="btn btn-outline" onclick="openPDFModal('team-mr-x.pdf')">View case study</button></article>
-   <article class="project"><span class="project-tag">FOODTECH · MARKETPLACE</span><h3>Zomato Street Food Integration</h3><p>Product and GTM approach for bringing local street vendors into a digital discovery ecosystem.</p><button class="btn btn-outline" onclick="openPDFModal('zomato-street-food.pdf')">View case study</button></article>
+  <div class="container">
+   <div class="section-head"><div><div class="section-kicker">06 / Case studies</div><h2 class="section-title">How I solve problems.</h2></div><p class="section-desc">Recent product work across quick commerce, beauty commerce, mobility and consumer strategy.</p></div>
+   <div class="case-showcase">
+    <div class="case-mini"><span class="case-number">01</span><div><span class="project-tag">ZEPTO · AOV</span><h3>Find the moment the basket gets stuck.</h3><p>67 respondents → behavioural segmentation → three product interventions → RICE prioritisation → measurable success metrics.</p></div></div>
+    <div class="case-mini"><span class="case-number">02</span><div><span class="project-tag">NYKAA · UX</span><h3>Reduce decision effort without removing discovery.</h3><p>Mapped a gifting journey and identified where discoverability, choice overload and contextual recommendations shape purchase confidence.</p></div></div>
+    <div class="case-mini"><span class="case-number">03</span><div><span class="project-tag">UBER · PICKUP</span><h3>Make the real-world pickup point understandable.</h3><p>Interview-led research reframed the problem from “better GPS” to helping rider and driver reach the same physical meeting point.</p></div></div>
+   </div>
   </div>
- </div>
-</section>
+ </section>
 
 <section class="reveal-element" id="credentials">
  <div class="container">
@@ -186,7 +206,7 @@ section{padding:100px 0;position:relative}.section-head{display:flex;justify-con
 
 <section class="contact reveal-element" id="contact">
  <div class="container">
-  <div class="section-head"><div><div class="section-kicker">08 / Contact</div><h2 class="section-title">Let's build something.</h2></div><p class="section-desc">Open to early-career opportunities across product, strategy, research and business-facing technology roles.</p></div>
+  <div class="section-head"><div><div class="section-kicker">08 / Contact</div><h2 class="section-title">Let's build something.</h2></div><p class="section-desc">Open to early-career Product, APM and product-adjacent roles where I can combine UX, strategy, data and technical execution.</p></div>
   <div class="contact-grid">
    <div class="contact-card"><h3>Reach me</h3><div class="contact-row"><i class="fas fa-envelope"></i><a href="mailto:pathakvinayak31@gmail.com">pathakvinayak31@gmail.com</a></div><div class="contact-row"><i class="fas fa-map-marker-alt"></i><span>New Delhi, India</span></div><div class="socials"><a href="https://linkedin.com/in/vinayakpathak" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="https://github.com/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></div></div>
    <form class="contact-card" action="mailto:pathakvinayak31@gmail.com" method="post" enctype="text/plain"><div class="form-group"><label>Name</label><input type="text" name="Name" required placeholder="Your name"></div><div class="form-group"><label>Email</label><input type="email" name="Email" required placeholder="you@example.com"></div><div class="form-group"><label>Message</label><textarea name="Message" rows="4" required placeholder="Tell me what you're working on..."></textarea></div><button type="submit" class="btn btn-primary">Send message <i class="fas fa-arrow-right"></i></button></form>
@@ -194,9 +214,9 @@ section{padding:100px 0;position:relative}.section-head{display:flex;justify-con
  </div>
 </section>
 </main>
-<footer class="footer"><div class="container"><p>© 2026 Vinayak Pathak · Built around curiosity, products & impact.</p></div></footer>
+<footer class="footer"><div class="container"><p>© 2026 Vinayak Pathak · Product, UX, strategy & technology.</p></div></footer>
 
-<div class="modal-overlay" id="pdfModal"><div class="modal-container"><div class="modal-header"><h3 id="modalTitle">Document Viewer</h3><button class="modal-close" onclick="closePDFModal()"><i class="fas fa-times"></i></button></div><div class="modal-body"><iframe id="pdfFrame" src="" frameborder="0"></iframe></div></div></div>
+<div class="modal-overlay" id="pdfModal"><div class="modal-container"><div class="modal-header"><h3 id="modalTitle">Document Viewer</h3><button class="modal-close" onclick="closePDFModal()"><i class="fas fa-times"></i></button></div><div class="modal-body" id="caseModalBody"></div></div></div>
 
 <script>
         // Enhanced JavaScript with All Features
@@ -272,6 +292,15 @@ section{padding:100px 0;position:relative}.section-head{display:flex;justify-con
             });
         }
 
+
+        const caseStudies = {
+          zepto:{title:"Zepto — Growing AOV Without Adding Friction",body:`<h4>Problem</h4><p>Zepto is already winning on speed. The case asked why baskets remain small and what happens between the first item and checkout.</p><div class="case-stat-grid"><div class="case-stat"><b>67</b><span>survey respondents</span></div><div class="case-stat"><b>₹372</b><span>estimated baseline AOV</span></div><div class="case-stat"><b>40.3%</b><span>urgency-led opening behaviour</span></div></div><h4>Research & segmentation</h4><p>The research explored shopper behaviour, basket size, triggers and switching. Segments included Urgent Top-Uppers, Comparison Shoppers, Threshold Shoppers and Loyal Repeaters.</p><h4>Product opportunities</h4><ul><li><strong>Smart Complements:</strong> context-aware add-ons on product pages.</li><li><strong>Usual Basket Reorder:</strong> predicted essentials with relevant complements.</li><li><strong>Zepto AI:</strong> conversational shopping that creates a curated basket from a need.</li></ul><h4>Prioritisation</h4><p>Used RICE across the three concepts, balancing reach, impact, confidence and effort. Smart Complements was positioned as the shortest-path experiment; Usual Basket Reorder addressed repeat behaviour; Zepto AI was treated as a longer-term bet.</p><h4>Success metrics</h4><p>North Star: weekly Average Order Value, segmented by shopper type. Supporting metrics included complement attach rate, AOV lift, category diversity, notification-to-basket conversion, query-to-cart conversion and repeat usage.</p>`},
+          nykaa:{title:"Nykaa — From “I Need a Gift” to Purchase Confidence",body:`<h4>Scenario</h4><p>Recipient: sister · Occasion: Rakshabandhan · Budget: ~₹1,500 · Platform: Nykaa · Goal: something premium and gift-worthy.</p><h4>User mindset</h4><p>“I know who I'm buying for and how much I want to spend; I just need Nykaa to help me decide what to buy.”</p><h4>Journey</h4><p>Mapped login → home → gift store → categories → product listing → evaluation → bag → checkout/payment.</p><h4>Key observations</h4><ul><li><strong>Home:</strong> strong discoverability, but competing entry points can increase decision effort.</li><li><strong>Categories:</strong> clear structure, but long-form navigation is less scannable.</li><li><strong>Gift Store:</strong> occasion-led curation reduces the need to choose a category first.</li><li><strong>Product listing:</strong> Most Gifted, Bestsellers and Customer Top Rated helped narrow choices.</li><li><strong>Bag:</strong> transparent pricing and gift-box visibility built confidence, but “Last minute additions” felt under-personalised.</li><li><strong>Checkout:</strong> payment flexibility and visible savings reduced uncertainty.</li></ul><h4>Opportunity</h4><p>Strengthen guided gifting discovery, contextual social proof and recommendation relevance when the user is willing to add another item.</p>`},
+          uber:{title:"Uber — The Ride Is Booked, The Pickup Isn’t",body:`<h4>Problem</h4><p>After booking, riders and drivers can still struggle to meet in busy or complex locations. A precise GPS pin does not always translate into an accessible real-world meeting point.</p><h4>Research</h4><p>Interviews explored recent difficult pickups, how people describe their location, where friction happens, what they do when things go wrong and what information would help. Interviews covered Delhi, Indore, Dehradun, Ghaziabad and Bangalore.</p><h4>Key findings</h4><ul><li>GPS is not always enough in complex environments.</li><li>People walk toward the vehicle to complete the handoff.</li><li>Calls and messages are the fallback coordination mechanism.</li><li>Landmarks, shops, gates and recognizable businesses are already used naturally.</li><li>Reported additional pickup time ranged from roughly 1–20 minutes.</li><li>9/12 respondents considered or experienced cancellation in the pickup context.</li></ul><h4>Problem reframing</h4><p>The opportunity is not simply “make the pin more accurate.” It is to help both sides reach the same real-world point with less coordination effort.</p><h4>Validation & guardrails</h4><p>Primary metric: driver-arrival → rider-boarding time. Supporting outcomes: pickup-related cancellations, calls/messages per pickup and repeat success of selected landmarks. Safety guardrails include avoiding inaccessible or unsafe stopping points.</p>`},
+          blitz:{title:"BLITZ — Hydration as a Lifestyle",body:`<h4>Idea</h4><p>Position BLITZ as an everyday natural, sugar-free sports hydration drink for students, professionals, travellers and active consumers.</p><h4>Strategy</h4><ul><li>Local sourcing from Indian fruit farmers.</li><li>Regional warehouses and cloud-based inventory for faster supply management.</li><li>Direct-to-retail and bulk purchasing to optimise costs.</li><li>Influencer-led engagement, UGC and humour-driven content.</li><li>AR fitness challenges and community-led social engagement.</li></ul><h4>Go-to-market</h4><p>Proposed premium and penetration pricing, a monthly fitness-pack subscription, expansion into stores, gyms and sports stores, plus partnerships with sports leagues, marathons, fitness expos and youth-focused events.</p>`}
+        };
+        function openCaseStudy(key){const modal=document.getElementById('pdfModal'),body=document.getElementById('caseModalBody'),title=document.getElementById('modalTitle'),data=caseStudies[key];if(!data)return;title.textContent=data.title;body.innerHTML=data.body;modal.style.display='flex';document.body.style.overflow='hidden';}
+
         // Enhanced Modal Functionality
         function initializeModal() {
             const modal = document.getElementById('pdfModal');
@@ -290,37 +319,29 @@ section{padding:100px 0;position:relative}.section-head{display:flex;justify-con
         }
 
         function openPDFModal(pdfPath) {
-            const modal = document.getElementById('pdfModal');
-            const iframe = document.getElementById('pdfFrame');
-            const title = document.getElementById('modalTitle');
-            
-            iframe.src = pdfPath;
-            title.textContent = getDocumentTitle(pdfPath);
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-            
-            // Add entrance animation
-            modal.style.animation = 'fadeIn 0.3s ease-out';
+            const modal=document.getElementById('pdfModal');
+            const body=document.getElementById('caseModalBody');
+            const title=document.getElementById('modalTitle');
+            title.textContent=getDocumentTitle(pdfPath);
+            body.innerHTML='<p style="padding:1rem 0;color:var(--muted)">This document can be connected here as a PDF when deployed.</p>';
+            modal.style.display='flex';
+            document.body.style.overflow='hidden';
         }
 
         function closePDFModal() {
-            const modal = document.getElementById('pdfModal');
-            const iframe = document.getElementById('pdfFrame');
-            
-            modal.style.animation = 'fadeOut 0.3s ease-out';
-            setTimeout(() => {
-                modal.style.display = 'none';
-                iframe.src = '';
-                document.body.style.overflow = 'auto';
-            }, 300);
+            const modal=document.getElementById('pdfModal');
+            const body=document.getElementById('caseModalBody');
+            modal.style.display='none';
+            body.innerHTML='';
+            document.body.style.overflow='auto';
         }
 
         function getDocumentTitle(filename) {
             const nameMap = {
                 'vinayak-resume.pdf': 'Resume - Vinayak Pathak',
-                'smart-health-integration.pdf': 'Case Study - Smart Health Integration',
-                'BCN.pdf': 'Case Study - BCN Brainwars',
-                'rupay-premium-strategy.pdf': 'Case Study - RuPay Premium Strategy',
+                
+                
+                
                 'zomato-street-food.pdf': 'Case Study - Zomato Street Food',
                 'team-mr-x.pdf': 'Case Study - Blitz Hydration Strategy',
                 'sdoh-health-forecasting.pdf': 'Research - SDOH Health Forecasting',
